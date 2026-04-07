@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&amp;family=Playfair+Display:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brown: {
+                950: '#1A0A02',
+              },
+              cream: {
+                50: '#FDF6EC',
+              }
+            },
+            borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            fontFamily: {
+                    "headline": ["Playfair Display", "serif"],
+                    "body": ["Public Sans", "sans-serif"],
+                    "label": ["Public Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px border-white/20;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-cream-50 font-body text-slate-900 overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/10 dark:bg-black/10 backdrop-blur-md border-b border-white/20 shadow-sm flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">menu</span>
+</div>
+<div class="text-xl font-bold tracking-widest uppercase text-slate-900 dark:text-white font-sans">
+            Hook Hospitality
+        </div>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</nav>
+<!-- Hero Section -->
+<section class="relative min-screen bg-brown-950 pt-28 pb-20 px-6 flex flex-col items-center text-center">
+<div class="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-xs font-medium tracking-wide">
+<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Open Now - Shrinkhala Galli, Koteshwor
+        </div>
+<h1 class="text-5xl md:text-7xl font-headline font-black text-white leading-[1.1] mb-8 max-w-2xl">
+            Hook Up With Our Hospitality
+        </h1>
+<!-- Frosted Glass Tabs -->
+<div class="grid grid-cols-2 gap-3 w-full max-w-md mb-10">
+<div class="glass-effect rounded-2xl py-4 flex flex-col items-center justify-center text-white/90">
+<span class="material-symbols-outlined mb-2 text-orange-400">event</span>
+<span class="text-sm font-medium">Events</span>
+</div>
+<div class="glass-effect rounded-2xl py-4 flex flex-col items-center justify-center text-white/90">
+<span class="material-symbols-outlined mb-2 text-orange-400">nightlife</span>
+<span class="text-sm font-medium">Live Music</span>
+</div>
+<div class="glass-effect rounded-2xl py-4 flex flex-col items-center justify-center text-white/90">
+<span class="material-symbols-outlined mb-2 text-orange-400">celebration</span>
+<span class="text-sm font-medium">Celebration</span>
+</div>
+<div class="glass-effect rounded-2xl py-4 flex flex-col items-center justify-center text-white/90">
+<span class="material-symbols-outlined mb-2 text-orange-400">local_bar</span>
+<span class="text-sm font-medium">Drinks</span>
+</div>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed max-w-sm font-light italic">
+            Where culinary excellence meets rhythmic soul. Experience the finest hospitality in the heart of Kathmandu.
+        </p>
+<!-- Background Image Element -->
+<div class="absolute inset-0 z-[-1] opacity-30">
+<img class="w-full h-full object-cover" data-alt="dramatic wide shot of a luxury dimly lit restaurant interior with warm ambient lighting and elegant wooden furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvCbMIciGJ4p8_7ofSN-YA1DV8-RUrfjyytr-pcKh95vj5oH-GUU9EI1RGoi9x2c5Gc8c5TTGmgiFFwnIsUnlKk7jTFyUFgxHgSQzZWNfPrawGBLR9hgNlFT4pBdAWrSRLHEYWaAPY35rDOBik3sRXrmrzUeEqFWGqQyk46-VzSYjUoz3szlNzrsnuBRtc2zY01FY-e6X6U1A0_P2DSxuWDvSvoIi5DSljw-F-clPLeuASHJN4P7SJfKr-h8gjQQ7zlLpOTcS4ydod"/>
+</div>
+</section>
+<!-- Culinary Preview Section -->
+<section class="bg-cream-50 py-20 px-6">
+<div class="max-w-screen-xl mx-auto">
+<div class="mb-12 text-center">
+<span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-2 block">Our Kitchen</span>
+<h2 class="text-4xl font-headline text-slate-900">Crafted to Perfection</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Dish 1 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="elaborate royal platter featuring variety of grilled meats, dips, and artisanal breads on a platter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXEvPCGkONzUTH9yuuNX2Dw1c6dArD3KgoGLAi-h5KKsan2DprpBF3EyjZm5iWhDrS6rSCashOADTWjjILvOAi0Pu-jDaTizEu0c1z8ukQRX9aANY2X5q4rUn9H86RA_PBkqPuevR4tlOAeg_uHk-xMtzvazsBc6VtNwm4sj9lFqOFRjI2_uqxfhVO8aW-Y2e3v3JSIOtRYmU_w6yYRC1fVIESGVYqRPhFWL5n4PBo7XY7B2pgnddIC-mVgVsXu74O9ugurgTP2hxq"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold font-headline">Royal Hook Platter</h3>
+<span class="text-orange-600 font-bold">Rs. 1350</span>
+</div>
+<p class="text-slate-500 text-sm">A signature collection of our finest tandoori specialties and house-made sauces.</p>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="creamy paneer butter masala in a traditional copper bowl with a swirl of fresh cream on top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAal3KV1a-C2_7z-mlIcvgK4SSJ2Fsu3_xEVftg_pXFAKe5feekQFmzcBJDFJb5SSZss4HWMiZ_MfIyzgj3GFU3cv_kmaN-o_wT1yF2F2HGnbaHWzt_Y92bNBcA0o3VAmtcwtsCR1iBaViet-zvMgTT_4FxbTupFZXR_AGkMgXRloQXpMYbKPpzEIpqQVaFJG5hz_XIVd772IJhhwhw9Zq2W1uOj1eLNq3GxiIMY0MWX6n40fyFqKeNMP3v2zuj0LkYojFavwPpgEYR"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold font-headline">Paneer Butter Masala</h3>
+<span class="text-orange-600 font-bold">Rs. 415</span>
+</div>
+<p class="text-slate-500 text-sm">Rich, creamy cottage cheese cubes simmered in a velvet tomato gravy with aromatic spices.</p>
+</div>
+</div>
+<!-- Dish 3 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="vibrant tequila sunrise cocktail with distinct orange and red layers garnished with a cherry and orange slice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV46I0z8wMsiQRy0iecAkLdMPs-Uvs_zMOB0fLQG9gDMn0sMjorFsaBc_1r2nU41e1awGyp7Qsm2COSfnbm4yjhXYAwEsiLpyTSUhMg5d2YFO3IWa7Q0hPftx9T7px-KG7pVlwsDR8Wg3a8ekrCJV6kmlORujasiVo_uLTtbd_IOkZ9P_IKbI48-wb_ZitCJ5vnRPYGVeoO2P3utLW5ysEFzC5Pc2REYTB7Oipxh0vmaggYLmwl5PUS6fZyUmuEiHcvXW2utVOJyHc"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold font-headline">Tequila Sunrise</h3>
+<span class="text-orange-600 font-bold">Rs. 650</span>
+</div>
+<p class="text-slate-500 text-sm">Refreshing blend of premium tequila, fresh orange juice, and sweet grenadine syrup.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Section -->
+<section class="bg-brown-950 py-20 px-6 relative overflow-hidden">
+<div class="max-w-screen-xl mx-auto relative z-10">
+<h2 class="text-4xl font-headline text-white mb-12 border-l-4 border-orange-600 pl-6">What's On</h2>
+<div class="space-y-6">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row bg-white/5 rounded-3xl overflow-hidden border border-white/10 group">
+<div class="w-full md:w-48 h-48">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="nepali male singer performing with acoustic guitar on a dimly lit stage with warm spot lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8gNIolICKOrNuj-2LeZ770Xf035KZPiwGr10eg8PTDvUh8l_OaVl4Y-ZauTt4hsrUW6RX_Vue0oByw5yCzyR7PzTRLsU0ezW_8awCNLIREuFAotg5TGtZ9CB6v5-bKW1lGhLlZB8MlV5xUFlaXIcx1gaDYvoS6kkf1DxbN613AWzV--USzWUjymC-bONgsPdNcZWRii-CheY6kSVlvhE-mT9qWn65iaNJOf-NxOXsISk2dfgPmNtzJ6obDoCm-D_Qkfrb0ksrPyQq"/>
+</div>
+<div class="p-6 flex flex-col justify-center">
+<span class="text-orange-500 text-sm font-bold mb-1 uppercase tracking-tighter">Baisakh 12</span>
+<h3 class="text-2xl font-headline text-white mb-2">Saturday Night with Bibek</h3>
+<p class="text-slate-400 text-sm">A soulful acoustic journey featuring classic hits and original melodies.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row bg-white/5 rounded-3xl overflow-hidden border border-white/10 group">
+<div class="w-full md:w-48 h-48">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="energetic live band performance with drums and electric guitars under purple and blue stage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9IDvhbnEBzEjPEV6R4wkKGtobxwC_wqMvnrrlhGCP-Q4EYhDG4II0Usr-65_qnO1moeHfXv8euEDNKY-XPrpRyto6-9cJzhgkUG800eZz114qmhqwftg_b-Abo8cGtfi7l96tnatUwcQ-YRxZYZrk3olAXF4mkIJnURG-6FgyrBSRH-M7Q8WxJ7kfnfz4dI-PW6KQecwjjxe8Oq-piADIDkTIvSaV19qzbE1ZJbQySXNM93eoyUfhUyTrkZNPgt-UlISu6D96FPJA"/>
+</div>
+<div class="p-6 flex flex-col justify-center">
+<span class="text-orange-500 text-sm font-bold mb-1 uppercase tracking-tighter">Jestha 7</span>
+<h3 class="text-2xl font-headline text-white mb-2">Parinam Band Live</h3>
+<p class="text-slate-400 text-sm">High-energy rock and pop covers to get you on your feet all night long.</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col md:flex-row bg-white/5 rounded-3xl overflow-hidden border border-white/10 group">
+<div class="w-full md:w-48 h-48 bg-orange-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-orange-600/30">favorite</span>
+</div>
+<div class="p-6 flex flex-col justify-center">
+<span class="text-orange-500 text-sm font-bold mb-1 uppercase tracking-tighter">Ashar 24</span>
+<h3 class="text-2xl font-headline text-white mb-2">Midnight Romance</h3>
+<p class="text-slate-400 text-sm">An intimate evening of soft jazz and candlelit dining for couples.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation Section -->
+<section class="bg-gradient-to-br from-orange-600 to-orange-400 py-20 px-6">
+<div class="max-w-lg mx-auto bg-white rounded-[2.5rem] p-8 shadow-2xl">
+<h2 class="text-3xl font-headline text-slate-900 mb-2 text-center">Ready to be Hooked?</h2>
+<p class="text-slate-500 text-sm text-center mb-8">Secure your table for an unforgettable experience.</p>
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-bold uppercase text-slate-400 mb-1 ml-1">Full Name</label>
+<input class="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-orange-500 transition-all" placeholder="Your name" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold uppercase text-slate-400 mb-1 ml-1">Guests</label>
+<select class="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-orange-500 transition-all">
+<option>2 People</option>
+<option>4 People</option>
+<option>6+ People</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-400 mb-1 ml-1">Date</label>
+<input class="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-orange-500 transition-all" type="date"/>
+</div>
+</div>
+<button class="w-full py-4 bg-orange-600 text-white font-bold rounded-2xl shadow-lg shadow-orange-600/20 hover:bg-orange-700 transition-all active:scale-95" type="submit">
+                    Book Now
+                </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black w-full mt-auto border-t border-slate-800 no-shadow w-full px-8 py-12 flex flex-col items-center space-y-8">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2">
+<img class="w-full h-auto" data-alt="professional modern minimalist circular logo for hook hospitality with artistic H letterform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUsj1F-hij_akoYg2P4FNTJgFc6qruhUfc4Ob4fbduhexaATYFmnPIQKqTV0-YZhVt9tJyYE-23-0pK_lqUK6lYCcUPS4sqUoc901i4-j6d6rapyfM8sWtjhydXQhygZigMUL_9qQUft97N0EnT8fSluPwXYO047wlKJZhTGmaagfGXV1nF06cKpAZuNuRGh_9CnZ-2E7J53JL8OTy3__TkkL3EJnAm2NAu-eX5rWAV_Aou4Rsvfqs4zsFrJgSdUaEZNvoSRO5mSHF"/>
+</div>
+<div class="text-center">
+<h4 class="text-lg font-bold text-white mb-1">Hook Hospitality</h4>
+<p class="text-slate-500 text-xs italic">Premium Lounge &amp; Restaurant</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl text-center md:text-left border-y border-slate-800 py-10">
+<div>
+<h5 class="text-orange-500 text-xs font-bold uppercase tracking-widest mb-4">Location</h5>
+<p class="text-slate-400 text-sm leading-relaxed">
+                    Hook Hospitality, Shrinkhala Galli,<br/>
+                    Kathmandu 44600, Kathmandu, Nepal
+                </p>
+<div class="mt-4 flex justify-center md:justify-start gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-orange-500 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-orange-500 cursor-pointer">camera_alt</span>
+</div>
+</div>
+<div>
+<h5 class="text-orange-500 text-xs font-bold uppercase tracking-widest mb-4">Contact Info</h5>
+<p class="text-slate-400 text-sm mb-1">hookhospitalitygroup@gmail.com</p>
+<p class="text-slate-400 text-sm">985-1349480</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="flex gap-6">
+<a class="text-slate-500 text-xs hover:text-orange-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 text-xs hover:text-orange-400 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 text-xs hover:text-orange-400 transition-colors" href="#">Contact Us</a>
+</div>
+<p class="text-xs font-light text-slate-400">© 2024 Hook Hospitality &amp; Lounge. Kathmandu, Nepal.</p>
+</div>
+</footer>
+</body></html>

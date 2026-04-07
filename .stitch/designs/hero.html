@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hook Hospitality - Warm Rustic Elegance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#C97D2E", 
+                        "primary-hover": "#E8A94A",
+                        "background-dark": "#1A0A02",
+                        "surface-dark": "#2C1608",
+                        "background-light": "#FDF6EC",
+                        "text-light": "#FDF6EC",
+                        "muted": "#8F7D70",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "sm": "0.5rem",   
+                        "md": "0.75rem",  
+                        "lg": "1rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'warm-dark': '0 8px 32px rgba(26, 10, 2, 0.4)',
+                        'warm-light': '0 8px 32px rgba(201, 125, 46, 0.08)',
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background-color: rgba(26, 10, 2, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top center, #2C1608 0%, #1A0A02 70%);
+        }
+        .texture-overlay {
+            mix-blend-mode: overlay;
+            opacity: 0.15;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body bg-background-dark text-text-light antialiased selection:bg-primary selection:text-white relative overflow-x-hidden">
+<!-- Floating Navbar -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[900px] px-4 sm:px-6">
+<div class="glass-nav rounded-full h-16 flex items-center justify-between px-6 shadow-warm-dark border border-white/5">
+<div class="flex items-center gap-3 text-text-light cursor-pointer">
+<img alt="Hook Logo" class="h-10 w-10 rounded-full object-cover border border-primary/20" src="https://lh3.googleusercontent.com/aida/ADBb0ugFI5P8qIJUxXWDF095HChEGbvzBNjRNG_xnXJCF0HIjrwvo8GQLx-aD8ht8QGo6054KlMZGjt4qpuHQzrCvNUlm7rBy9Ngkf7qdMWy3XLam4z2QQFP397bKS3ZCdk_EFALwcJjWlZry7cy4R7a6wku2oqx2hOrMm3lRDbkFAFOWzgm5bqBTo8g8Xt7RpvA3QpjreC_NWOUWLK8tytcKebrZWSqAXW-mytPkgSOZt5Fkt3mddK8yRPD-1tWv1oDb8AmYr27GRXcR5Y"/>
+<span class="font-display font-bold text-xl tracking-wide">Hook Hospitality</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-text-light text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-light text-sm font-medium hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-text-light text-sm font-medium hover:text-primary transition-colors" href="#">Events</a>
+<a class="text-text-light text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="text-text-light text-sm font-medium hover:text-primary transition-colors" href="#">Reserve</a>
+</div>
+<button class="bg-primary hover:bg-primary-hover text-background-dark text-sm font-semibold h-10 px-6 rounded-full transition-colors hidden sm:flex items-center justify-center">
+            Book a Table
+        </button>
+<!-- Mobile Menu Icon (Placeholder) -->
+<button class="sm:hidden text-text-light">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[1024px] flex flex-col items-center justify-center pt-24 hero-gradient pb-24">
+<!-- Texture Overlay -->
+<div class="absolute inset-0 bg-noise texture-overlay pointer-events-none"></div>
+<div class="relative z-10 container mx-auto px-4 flex flex-col items-center text-center max-w-4xl">
+<!-- Pill Badge -->
+<div class="inline-flex items-center gap-2 border border-muted rounded-full px-4 py-1.5 mb-8 bg-background-dark/50 backdrop-blur-sm">
+<span class="size-2 rounded-full bg-primary-hover animate-pulse"></span>
+<span class="text-primary-hover text-xs font-semibold uppercase tracking-widest">OPEN NOW · SHRINKHALA GALLI, KOTESHWOR</span>
+</div>
+<!-- Massive Typography -->
+<h1 class="font-display font-bold text-5xl sm:text-6xl md:text-[96px] leading-[1.1] mb-6 text-text-light drop-shadow-lg">Hook Up With Our<br/><span class="text-primary/90 italic">Hospitality</span></h1>
+<div class="inline-flex items-center gap-6 px-8 py-3 rounded-full glass-nav border border-white/10 mb-8">
+<span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Events</span>
+<span class="size-1 rounded-full bg-primary/40"></span>
+<span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Live Music</span>
+<span class="size-1 rounded-full bg-primary/40"></span>
+<span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Celebration</span>
+<span class="size-1 rounded-full bg-primary/40"></span>
+<span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Drinks</span>
+</div>
+<!-- Subline -->
+<p class="text-muted/90 text-lg sm:text-xl max-w-2xl mb-10 font-display italic font-light tracking-wide leading-relaxed">
+            Indulge in artful cuisine, unwind in style at our captivating lounge bar. Flavors ignite, music sets.
+        </p>
+<!-- Dual Actions -->
+<div class="flex flex-wrap items-center justify-center gap-4">
+<button class="bg-primary hover:bg-primary-hover text-background-dark font-semibold h-12 px-8 rounded-full transition-colors text-base shadow-lg shadow-primary/20">
+                Explore Menu
+            </button>
+<button class="border-2 border-primary text-primary hover:bg-primary/10 font-semibold h-12 px-8 rounded-full transition-colors text-base flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span>
+                Watch the Vibe
+            </button>
+</div><div class="flex justify-center mt-20">
+<div class="glass-nav border border-white/10 rounded-full px-6 py-3 flex items-center gap-4 shadow-warm-dark">
+<div class="flex items-center gap-2 border-r border-white/10 pr-4">
+<img alt="Google" class="h-5 w-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3VUAdgH2trgxbhp-wwX_sinErDMbNDeR_rwbtSHSNgZw8OeXIg9KqK2ZMe8hmT4aMiOfz_QkQaHtFqUJZ3JlxNsdpHzE6xYSoUSQnt9iC5lrycdU2sQkcNkpRQ8BHsvAXjBCq8PMGkNMrWLnGBa_3VsF6RMcg6E0Ofl29ZrKDTjO7kBJFvCkwctfwZfFQpNs8rcim8OIt_ATXm_DSPX4-02EpSpmpCUuYq9UjaMuNXecA9mapdB4IPLmC9bai5_y9VU2j-CadFedY"/>
+<span class="text-text-light/80 text-[10px] uppercase font-bold tracking-widest">Reviews</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-display font-bold text-primary text-lg">Excellent 4.9/5</span>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-sm fill-current" data-icon="star">star</span>
+<span class="material-symbols-outlined text-primary text-sm fill-current" data-icon="star">star</span>
+<span class="material-symbols-outlined text-primary text-sm fill-current" data-icon="star">star</span>
+<span class="material-symbols-outlined text-primary text-sm fill-current" data-icon="star">star</span>
+<span class="material-symbols-outlined text-primary text-sm fill-current" data-icon="star">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Google Reviews Sliding Section -->
+</section>
+<!-- Spacer -->
+</body></html>

@@ -1,0 +1,238 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-24 hero-gradient pb-24">
+  <div class="absolute inset-0 noise-overlay pointer-events-none"></div>
+  <div class="relative z-10 container mx-auto px-4 flex flex-col items-center text-center max-w-4xl">
+    <!-- Pill Badge -->
+    <div class="reveal inline-flex items-center gap-2 border border-muted rounded-full px-4 py-1.5 mb-8 bg-background-dark/50 backdrop-blur-sm">
+      <span class="size-2 rounded-full bg-primary-hover animate-pulse"></span>
+      <span class="text-primary-hover text-xs font-semibold uppercase tracking-widest">OPEN NOW &middot; SHRINKHALA GALLI, KOTESHWOR</span>
+    </div>
+    <!-- Massive Typography -->
+    <h1 class="reveal font-display font-bold text-5xl sm:text-6xl md:text-[96px] leading-[1.1] mb-6 text-text-light drop-shadow-lg" style="transition-delay: 150ms;">
+      Hook Up With Our<br/><span class="text-primary/90 italic">Hospitality</span>
+    </h1>
+    <div class="reveal inline-flex items-center gap-6 px-8 py-3 rounded-full glass-nav border border-white/10 mb-8" style="transition-delay: 300ms;">
+      <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Events</span>
+      <span class="size-1 rounded-full bg-primary/40"></span>
+      <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Live Music</span>
+      <span class="size-1 rounded-full bg-primary/40"></span>
+      <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Celebration</span>
+      <span class="size-1 rounded-full bg-primary/40"></span>
+      <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Drinks</span>
+    </div>
+    <!-- Subline -->
+    <p class="reveal text-muted/90 text-lg sm:text-xl max-w-2xl mb-10 font-newsreader italic font-light tracking-wide leading-relaxed" style="transition-delay: 450ms;">
+      Indulge in artful cuisine, unwind in style at our captivating lounge bar. Flavors ignite, music sets.
+    </p>
+    <!-- Dual Actions -->
+    <div class="reveal flex flex-wrap items-center justify-center gap-4" style="transition-delay: 600ms;">
+      <a href="/menu" class="btn-hover bg-primary hover:bg-primary-hover text-background-dark font-semibold h-12 px-8 rounded-full transition-colors text-base shadow-lg shadow-primary/20 flex items-center">
+        Explore Menu
+      </a>
+      <a href="/events" class="btn-hover border-2 border-primary text-primary hover:bg-primary/10 font-semibold h-12 px-8 rounded-full transition-colors text-base flex items-center gap-2">
+        <span class="material-symbols-outlined text-[20px]">play_circle</span>
+        Watch the Vibe
+      </a>
+    </div>
+    <!-- Google Reviews Badge -->
+    <div class="reveal flex justify-center mt-20" style="transition-delay: 750ms;">
+      <div class="glass-nav border border-white/10 rounded-full px-6 py-3 flex items-center gap-4 shadow-warm-dark hover-glow">
+        <div class="flex items-center gap-2 border-r border-white/10 pr-4">
+          <span class="text-text-light/80 text-[10px] uppercase font-bold tracking-widest">Google Reviews</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="font-display font-bold text-primary text-lg">Excellent <span data-counter="4.9">0.0</span>/5</span>
+          <div class="flex gap-0.5">
+            <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee Strip -->
+<div class="w-full bg-gradient-to-r from-primary to-accent h-12 flex items-center overflow-hidden relative">
+  <div class="flex whitespace-nowrap animate-marquee">
+    <div class="flex gap-8 px-4 items-center">
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Live Music Every Weekend</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Private Dining Available</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Award-Winning Cocktails</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Est. 2019</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+    </div>
+    <div class="flex gap-8 px-4 items-center">
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Live Music Every Weekend</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Private Dining Available</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Award-Winning Cocktails</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+      <span class="text-background-dark font-body text-sm font-bold tracking-wide uppercase">Est. 2019</span>
+      <span class="text-background-dark/50 text-xs">&diamondsuit;</span>
+    </div>
+  </div>
+</div>
+
+<!-- Culinary Preview Section -->
+<section class="bg-background-light py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-16">
+      <h2 class="font-display text-[48px] md:text-[56px] leading-tight text-text-dark mb-4">Crafted to Perfection</h2>
+      <p class="font-body text-muted text-lg max-w-2xl mx-auto">Discover a symphony of flavors prepared with locally sourced ingredients and culinary mastery.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 stagger">
+      <!-- Dish 1 -->
+      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMfdBY-YGZQY-bXVYo3z_eTNNKtOgyimvZiWOGPpn3r9N6-jPn_QN8lDGqVsgDiwRIwJr6n6YLZREiZouZsLp0wcXvMJkdAHSxaq_W4-bMeHM0MethfNRkJ4qBqslDmaXLCXwYjRu7fMA874gclyWYkxmWcSxnGwIiDZiaMy2TuHz_ggTqwWOM8tle4F5dMgUgd0Rcz7W3RMcxTzlCze3dl5GGZGfjsT4A7mT8_rQydzHSP-5ivfQEcUpUc1BV6Sx20Qb1QajrccO9');"></div>
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Royal Hook Platter</h3>
+          <p class="font-body text-muted text-sm leading-relaxed mb-4">A majestic collection of Mutton Seekh Kebabs, Chicken Seekh, Chicken Tikka, and Tandoori Chicken served with mint chutney.</p>
+          <p class="font-body font-bold text-primary text-lg">Rs. 1350</p>
+        </div>
+      </article>
+      <!-- Dish 2 -->
+      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6LyjuxaaDZzP5l7TOcX0GJ4IOZjeAHPdQbOcQ90b8YhfQVc-IN57Lks2a7C3GlmSFcSdAN95CJZ5wRpcHFFxitYf1sVaNsacJxdSGR9R2KUnv_TrBugkutMbzv6PK4sY7hnTha-UGXYGo4t0jcnycvTTMXz3RTSFvdP-EO7MImiSfebtTiwwruiRsFUi4h8qBPvJrzGEf2zIEQ89yfklEHvm8a6wOAXCFXCs2cIctaxSTByPgH94fV560rRTOZFmYwCVci45BZs2c');"></div>
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Paneer Butter Masala</h3>
+          <p class="font-body text-muted text-sm leading-relaxed mb-4">Succulent cubes of fresh paneer simmered in a rich, velvety tomato and butter gravy with aromatic spices.</p>
+          <p class="font-body font-bold text-primary text-lg">Rs. 415</p>
+        </div>
+      </article>
+      <!-- Dish 3 -->
+      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhlvyoTkWKVq2kHSmMUVJqp51zkuhVbLo__1FsTsXggWaZqES3Zs4GEcaLCPKl-2_YQQOwsaMOIayDNhalEYu3ieQRzf0UjnbLPGwUHpiCC9R7XDB0GQJ7yHxK_uwponeZqns9K-KEyJUGZyPr95UivKAfdnHt8yQoYUaRnvnktW9iP2Yh4ABe5qrrym4nyPSWFxsG0Me7BW4do-VkwRF93K1X5nVxcnOJI4IAdZrfttpME8_l-r9dRxS5Zzm6RLCJPIVl41_S5wPL');"></div>
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Tequila Sunrise</h3>
+          <p class="font-body text-muted text-sm leading-relaxed mb-4">A refreshing and visually stunning cocktail crafted with premium tequila, fresh orange juice, and a splash of grenadine.</p>
+          <p class="font-body font-bold text-primary text-lg">Rs. 650</p>
+        </div>
+      </article>
+    </div>
+    <!-- Brand Pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
+      <div class="reveal hover-lift bg-tint-amber rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end cursor-pointer">
+        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">01</span>
+        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Artful<br/>Cuisine</h3>
+        <p class="font-body text-surface-dark/70 text-sm relative z-10">A menu designed to engage all senses.</p>
+      </div>
+      <div class="reveal hover-lift hover-glow bg-surface-dark noise-overlay rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end shadow-warm-dark cursor-pointer">
+        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">02</span>
+        <h3 class="font-display text-3xl text-text-light mb-2 relative z-10">Signature<br/>Cocktails</h3>
+        <p class="font-body text-muted text-sm relative z-10">Crafted with precision and premium spirits.</p>
+      </div>
+      <div class="reveal hover-lift bg-tint-gold rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end cursor-pointer">
+        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">03</span>
+        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Live Music<br/>Nights</h3>
+        <p class="font-body text-surface-dark/70 text-sm relative z-10">The perfect soundtrack to your evening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events Preview Section -->
+<section class="py-24 bg-background-dark text-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+  <div class="max-w-[1200px] mx-auto px-4 md:px-20 relative z-10">
+    <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <h3 class="text-accent font-bold tracking-[0.3em] uppercase mb-4">Mark Your Calendar</h3>
+        <h2 class="text-4xl md:text-5xl font-display font-bold leading-tight">What's On</h2>
+      </div>
+      <a href="/events" class="text-primary font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+        View All Events <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 gap-6">
+      <!-- Event 1 -->
+      <div class="reveal-left hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
+        <div class="w-full md:w-1/3 h-64 md:h-auto img-hover-zoom">
+          <img class="w-full h-full object-cover" alt="Live performance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqb6iAIEzW_SG_HdfxfIfrEylRm-_YvFfTzE7LhiaMVojyjC746OEbla1e44xIc3MWDDvIFw2WLNOwQxubk58o1UQF6M4lDpJzxk50CqbOX3Q6-bPx24zfcHVnWhlgBqqg4kpNu2xDKx6HJLk3RlBWBQvPyHESDxMHp3x0zpPuhKX5xYQhglUMjPFzfgoI3hp7IB3T0pZvM6oXy5yj_eng-LMtobsgBSEfYSOUrYfLflMuQji8KHYVDTHibjBVrALTLxFWE9szETBx" />
+        </div>
+        <div class="p-8 flex-1">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="bg-primary text-background-dark px-4 py-1 rounded-sm text-xs font-bold uppercase">Baisakh 12</span>
+            <span class="text-muted text-sm">Saturday Night</span>
+          </div>
+          <h4 class="text-3xl font-display font-bold mb-4 text-shimmer">Saturday Night with Bibek</h4>
+          <p class="text-muted mb-6">Unplugged acoustic session featuring soulful Nepali melodies and international hits.</p>
+          <a href="/booking" class="btn-hover border border-muted/30 hover:border-primary hover:text-primary px-6 py-2 rounded-sm transition-colors font-bold inline-block">Reserve Table</a>
+        </div>
+      </div>
+      <!-- Event 2 -->
+      <div class="reveal-right hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
+        <div class="w-full md:w-1/3 h-64 md:h-auto img-hover-zoom">
+          <img class="w-full h-full object-cover" alt="Band performance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbRytdjJeyHBS2N9KW526pXLjKeAf_JS_IPn5iY4U2A55ZOIW2opkafL5tex_HRiS8nqE094HpMqxjYdGtCtYXoY9oLrQAiuf6nl8s4G5qwxkxbh9r3YlcEyg983OQX1d2b6njgdASPjZJb5JMijlv-ln1nrqQ9Ol63uAqf1dqq_wcaWk5YXlezLNIK6Jiz1oowjeoRW-iu1u6ZQlwtgBmeW9myeISMvSZdClYWjkcGT5wYlKhqrTe2_0EKozX9kbTh5583ASig6oM" />
+        </div>
+        <div class="p-8 flex-1">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="bg-primary text-background-dark px-4 py-1 rounded-sm text-xs font-bold uppercase">Jestha 7</span>
+            <span class="text-muted text-sm">Saturday Night</span>
+          </div>
+          <h4 class="text-3xl font-display font-bold mb-4 text-shimmer">Parinam Band Live</h4>
+          <p class="text-muted mb-6">A high-energy rock performance to kickstart your weekend with the best local vibes.</p>
+          <a href="/booking" class="btn-hover border border-muted/30 hover:border-primary hover:text-primary px-6 py-2 rounded-sm transition-colors font-bold inline-block">Reserve Table</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking CTA Section -->
+<section class="relative bg-gradient-to-r from-primary to-accent py-24 px-6 sm:px-12 lg:px-24 flex flex-col items-center justify-center text-center">
+  <div class="reveal-scale relative z-10 w-full max-w-5xl mx-auto">
+    <h2 class="font-display font-bold text-5xl sm:text-[64px] text-text-dark leading-tight mb-12">Ready to be Hooked?</h2>
+    <form action="/booking" method="GET" class="hover-lift bg-background-light p-4 rounded-md shadow-warm-dark flex flex-col md:flex-row items-center gap-4 max-w-4xl mx-auto w-full">
+      <div class="flex-1 w-full flex items-center border-b md:border-b-0 md:border-r border-muted/30 pb-4 md:pb-0 md:pr-4">
+        <span class="material-symbols-outlined text-muted mr-3">calendar_today</span>
+        <div class="flex flex-col items-start w-full">
+          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-1">Date</label>
+          <input class="w-full bg-transparent border-none p-0 text-text-dark font-medium focus:ring-0 text-sm" type="date" name="date" />
+        </div>
+      </div>
+      <div class="flex-1 w-full flex items-center border-b md:border-b-0 md:border-r border-muted/30 pb-4 md:pb-0 md:px-4">
+        <span class="material-symbols-outlined text-muted mr-3">schedule</span>
+        <div class="flex flex-col items-start w-full">
+          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-1">Time</label>
+          <select name="time" class="w-full bg-transparent border-none p-0 text-text-dark font-medium focus:ring-0 text-sm cursor-pointer">
+            <option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex-1 w-full flex items-center pb-4 md:pb-0 md:px-4">
+        <span class="material-symbols-outlined text-muted mr-3">group</span>
+        <div class="flex flex-col items-start w-full">
+          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-1">Guests</label>
+          <select name="guests" class="w-full bg-transparent border-none p-0 text-text-dark font-medium focus:ring-0 text-sm cursor-pointer">
+            <option>2 People</option><option>3 People</option><option>4 People</option><option>5+ People</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn-hover w-full md:w-auto mt-4 md:mt-0 bg-primary hover:bg-primary-hover transition-colors text-text-dark font-semibold text-[15px] px-8 py-4 rounded-sm whitespace-nowrap flex items-center justify-center gap-2">
+        Find Table <span class="material-symbols-outlined text-lg">arrow_forward</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

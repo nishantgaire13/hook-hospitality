@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hook Hospitality - Warm Rustic Elegance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ec5b13",
+            "warm-dark": "#1A0A02",
+            "amber-accent": "#C97D2E",
+            "gold-soft": "#E8A94A",
+            "cream-light": "#FDF6EC",
+            "background-light": "#f8f6f6",
+            "background-dark": "#221610",
+          },
+          fontFamily: {
+            "display": ["Public Sans", "sans-serif"],
+            "sans": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(26, 10, 2, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(232, 169, 74, 0.2);
+    }
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: 2rem;
+    }
+    .marquee-content {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 2rem;
+      animation: scroll 30s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body class="bg-cream-light font-sans text-warm-dark">
+<!-- Section 1: Hero Section (Shared Component Logic Integration) -->
+<div class="relative flex min-h-screen w-full flex-col bg-warm-dark overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 md:px-10 py-4 glass-effect rounded-2xl mb-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-10 overflow-hidden rounded-full">
+<img alt="Hook Hospitality Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujqc44z1Gvjw6ZR7YuDureyr_cXCGw3JpL_5UN8a4hRzcg5ZY5r5gSXnECVlIq5YaeY7RuMoZPdKw4rbFVtrBB6lyS177ImAEsf98hnCgaxrzje4TOCsr2FLBcRBx4dFd4-XRyguuG1IJc-IG9V1YWMrs2np8H9dIZEriBCwYtE9ZYh3cNRY3ohiT7BBxQhgnP1t6lPQKsGG84bGFcs5zmVENbb4HLbVcMK6I3x2yPALvAaqlIJDkBkT3hekmlGAL-cXIvu_o8HmKs"/>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight">Hook Hospitality</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+<button class="flex items-center justify-center rounded-xl h-10 bg-amber-accent/20 hover:bg-amber-accent/40 text-white px-4 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-gold-soft" data-alt="portrait of a professional hospitality manager in a stylish uniform with a warm smile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMO_yEntdYe9b2mkNq22f0r26_p3naUUnZabw2Eq8F-MHu7TXfGd8lt8PCr2Py3oBvtwkXDS_7XttNB-3Nigr8Izn6XRmK-3ko3Q7PH8AXBJUx0xsBo6lWza6-6NhKvp__Zg83TCdV1WQYEeuQtZmgIigs_ivlVan2QSGHqzupOjSCtdsBNj5JMHJDZ-tuqQw7_b_uMz2xqN-83iyC9MKRdeSrnLrSmtZw9Yi44Ok1vJJxhWuvAsEnjepg5WV3S1dhezqua-g92kRE");'></div>
+</div>
+</header>
+<!-- Hero Content -->
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="relative flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-3xl items-center justify-center p-8 overflow-hidden shadow-2xl" data-alt="upscale moody bar interior with warm amber lighting, polished wood textures, and elegant cocktail arrangements" style='background-image: linear-gradient(rgba(26, 10, 2, 0.4) 0%, rgba(26, 10, 2, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeYELMxZfIba05C611LOA75Z5H1-WaGK9xr_MDrhgeo9tdBs5XKGsYaxX8XlDGebX5R6-i7PVoP_paxqQ0FUnaYZ9xY6grYkmvxkoLtemN6T1LtwT0NRSBtQNA3guD-ujVdpPcu58zj1WRUiOK71oR4mLolwTH_03J34eYEKS65Kz-xWGwnDBqT9D5Lj7xcBVa1Qd-rQ6H8oqIfHz5oOdJmLyD1laO_swQdWITGuIEvudUmLuf_DWr6t5YpJf39w1XsOoso35L0gdG");'>
+<div class="flex flex-col gap-4 text-center max-w-2xl">
+<h1 class="text-white text-5xl font-black leading-tight tracking-[-0.033em] md:text-7xl drop-shadow-lg">
+                    Hook Up With Our Hospitality
+                  </h1>
+<h2 class="text-gold-soft text-base font-medium leading-relaxed md:text-lg opacity-90">
+                    Experience the finest events, live music, and celebrations at Shrinkhala Galli, Koteshwor. Warmth and elegance in every detail.
+                  </h2>
+</div>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-amber-accent hover:bg-primary text-white text-lg font-bold transition-all shadow-lg hover:shadow-primary/20">
+<span class="truncate">Book Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Glass Tabs -->
+<div class="mt-8">
+<div class="flex glass-effect rounded-2xl p-1 justify-between overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center bg-amber-accent/20 rounded-xl text-white px-6 py-4 min-w-[100px] flex-1" href="#">
+<p class="text-sm font-bold tracking-wider">Events</p>
+</a>
+<a class="flex flex-col items-center justify-center text-gold-soft hover:text-white px-6 py-4 min-w-[100px] flex-1 transition-colors" href="#">
+<p class="text-sm font-bold tracking-wider">Live Music</p>
+</a>
+<a class="flex flex-col items-center justify-center text-gold-soft hover:text-white px-6 py-4 min-w-[100px] flex-1 transition-colors" href="#">
+<p class="text-sm font-bold tracking-wider">Celebration</p>
+</a>
+<a class="flex flex-col items-center justify-center text-gold-soft hover:text-white px-6 py-4 min-w-[100px] flex-1 transition-colors" href="#">
+<p class="text-sm font-bold tracking-wider">Drinks</p>
+</a>
+</div>
+</div>
+<!-- Rating Tab -->
+<div class="flex justify-center mt-12 mb-8">
+<div class="flex items-center gap-3 glass-effect px-8 py-4 rounded-full border border-gold-soft/30">
+<p class="text-gold-soft text-lg font-medium">Average Rating</p>
+<div class="w-px h-6 bg-gold-soft/30"></div>
+<p class="text-white text-3xl font-black">4.9</p>
+<span class="material-symbols-outlined text-gold-soft" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Social Proof Strip -->
+<div class="bg-amber-accent py-4 overflow-hidden border-y border-gold-soft/30 shadow-inner">
+<div class="marquee">
+<div class="marquee-content text-white font-bold text-sm md:text-base uppercase tracking-[0.2em] whitespace-nowrap">
+<span>Live Music Every Weekend</span>
+<span>·</span>
+<span>Private Dining Available</span>
+<span>·</span>
+<span>Award-Winning Cocktails</span>
+<span>·</span>
+<span>Est. 2019</span>
+<span>·</span>
+<span>Live Music Every Weekend</span>
+<span>·</span>
+<span>Private Dining Available</span>
+<span>·</span>
+<span>Award-Winning Cocktails</span>
+<span>·</span>
+<span>Est. 2019</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Culinary Preview -->
+<section class="py-24 px-4 md:px-20 bg-cream-light">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col mb-16 text-center md:text-left">
+<h3 class="text-amber-accent font-bold tracking-[0.3em] uppercase mb-4">Taste the Excellence</h3>
+<h2 class="text-4xl md:text-5xl font-black text-warm-dark leading-tight">Crafted to Perfection</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Dish 1 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-warm-dark/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="lavish royal hook platter featuring assorted grilled meats, fresh vegetables, and dipping sauces on a dark slate board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMyNoTBQHeCX3GkicSh17dRd9po2qFuwEJXn6Ttk1Q2SWycMGm4zq28hySAsiA_i74eWkipcEGL2JiEl1N_QcvaNG201weedpzDMeoP1m5Hz7qhiMePwq_GZCKvelWmYHaJzuzxonr9v7Xmjf0o9KN5zL8_Nhbaykljy4XxbuYLLPBQ6hFt5bqq6cC5MGgiXGiBxbNehlfb7S87Fq31fnrRPhghxXpr-iR72mXJLBJ1B61cVky1wmFlFjPBiC1omYyIuZ-_cC5HUrc"/>
+</div>
+<div class="p-8">
+<h4 class="text-2xl font-bold text-warm-dark mb-2">Royal Hook Platter</h4>
+<p class="text-warm-dark/60 mb-6 leading-relaxed">Our signature selection of chef's finest grilled delicacies served with artisan dips.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-black text-amber-accent">Rs. 1350</span>
+<button class="p-3 bg-warm-dark text-white rounded-xl hover:bg-amber-accent transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-warm-dark/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="rich paneer butter masala curry in a traditional copper bowl garnished with fresh cream and coriander" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtR7U1GrRpGFOS_wQgAmEHcsqNhhHzMHjdkmmryK9aw0Xd32Pm7w1O4ZXxJ18fjYEZxcglCEv6mwdUiRQCkUgOkZuHIf1bPDxRy7hlb7cSMK5NABHh3NYmgOuGPrX1_8X0_zJnv_-NdYSwZ3eQH6uT9QUxVchzikhTsESIaBHeWvBh64i9LFrJLaHF9E5BBgn7mI6SDUOoIJZFPlKNEjwGPJ9YEYgBj0VMcJ6i2MMxTAUQlmowgKd84qrf3cA16WsKYSvxtBog4uRr"/>
+</div>
+<div class="p-8">
+<h4 class="text-2xl font-bold text-warm-dark mb-2">Paneer Butter Masala</h4>
+<p class="text-warm-dark/60 mb-6 leading-relaxed">Velvety tomato gravy with soft paneer cubes, finished with a dash of fresh cream.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-black text-amber-accent">Rs. 415</span>
+<button class="p-3 bg-warm-dark text-white rounded-xl hover:bg-amber-accent transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish 3 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-warm-dark/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="tequila sunrise cocktail in a tall glass showing vibrant yellow and red layers with a cherry garnish on a sunset beach background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgIH95DrXK8T5AU3EJT40yYLxX6uQ7amOD8DOhN56N40oZmT1IVXfaafBRKY6PxBxrHkEEqDXuIj1e8FHzA24-STMh28rXNY5umnzelIOf9Yv8zgMzkUY-HHB82-FbwEJqm_arUpQ4ExKxL_MiauxprB_tM7wlmMwIY4k1YMLP-xAnl9TE1SliX3oODvqd6vMvWQ1l0je26XfLHdreAPybnyEhmVQ6nsd2hdBVXAsyB8qrDBc_U21fe4lpx_CrUFdSxmG1LI9bO2B8"/>
+</div>
+<div class="p-8">
+<h4 class="text-2xl font-bold text-warm-dark mb-2">Tequila Sunrise</h4>
+<p class="text-warm-dark/60 mb-6 leading-relaxed">A refreshing blend of tequila, orange juice, and grenadine, layered to perfection.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-black text-amber-accent">Rs. 650</span>
+<button class="p-3 bg-warm-dark text-white rounded-xl hover:bg-amber-accent transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Nepali Nights & Events -->
+<section class="py-24 bg-warm-dark text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-amber-accent/10 blur-[120px] rounded-full"></div>
+<div class="max-w-[1200px] mx-auto px-4 md:px-20 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h3 class="text-gold-soft font-bold tracking-[0.3em] uppercase mb-4">Mark Your Calendar</h3>
+<h2 class="text-4xl md:text-5xl font-black leading-tight">What's On</h2>
+</div>
+<button class="text-amber-accent font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+          View All Events <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row items-center glass-effect rounded-3xl overflow-hidden group">
+<div class="w-full md:w-1/3 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="energetic live music performance with a lead singer and band under purple and blue stage lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBf0gWELNQfF-5PKID8L5Jc2qz-AC1qE0EhbdqlXLnHf8XGCpxk8UMB8oV3n1Ulzpx8_BZ8MbGV1tyAeNrczv124fKpweaPtv348K4jTcPve1w6tsCtKnVcUkCKwvo20zjE440WS8-CA-Tjo_dQUVDkLVmlcPKgqXP53SjdEksPi-bBPySAZW0GEzQ05J3exZ6UP2gfjj_QRczbeD_hOUP_q8gcbBpw_9H53BuPkMlgwRYa3YsHO0tXHKP5HMrnD91QArOOxl4z2q1"/>
+</div>
+<div class="p-8 flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-amber-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Baisakh 12</span>
+<span class="text-gold-soft/60 text-sm">Saturday Night</span>
+</div>
+<h4 class="text-3xl font-black mb-4">Live with Bibek</h4>
+<p class="text-gold-soft/70 mb-6">Unplugged acoustic session featuring soulful Nepali melodies and international hits.</p>
+<button class="border border-gold-soft/30 hover:bg-gold-soft/10 px-6 py-2 rounded-xl transition-colors font-bold">Secure Entry</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row items-center glass-effect rounded-3xl overflow-hidden group">
+<div class="w-full md:w-1/3 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a local band performing on stage with electric guitars and drum set in a cozy dark venue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT-eIS4y5NGzZIhYebufxVDDFjuIEZ6tQMWk4Ui48IQXM87WMytq5vDg8TPRP5q_oFnwrNRGZ7KVXLit7QaAOUU5IKnva56x7dJcBUnCUyZb5NzaeJfDgd6zPpY1lMlQ3T44uZDwqj88B8L687uP_7zesgVddluV3w7DwYQe8Ny0cjEWEYddt-He9Pefks6GwnwsDddOUCFvSUrxz6Chp-nSqO7zKoHROKeFfWKyxN4rQd057vYyzhjU3VckHhfgG6sQl8H4KB_4Xa"/>
+</div>
+<div class="p-8 flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-amber-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Jestha 7</span>
+<span class="text-gold-soft/60 text-sm">Saturday Night</span>
+</div>
+<h4 class="text-3xl font-black mb-4">Parinam Band Live</h4>
+<p class="text-gold-soft/70 mb-6">A high-energy rock performance to kickstart your weekend with the best local vibes.</p>
+<button class="border border-gold-soft/30 hover:bg-gold-soft/10 px-6 py-2 rounded-xl transition-colors font-bold">Secure Entry</button>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col md:flex-row items-center glass-effect rounded-3xl overflow-hidden group">
+<div class="w-full md:w-1/3 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="romantic candlelight dinner setting with rose petals on a table and soft warm background bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwOPydlaPMPSjpFV6NjrtIl0nca7FfhwOc4kf3mbNtxHcukoA_dsNcxvha5swU6rOGeWt2r3QfqYCGWvr1VcQEqXf1NsABB286Ds7K8-6Pw9V01sCfAd5LF5HlH4Tdwq6rpZdfV_FEvornvUcvnLWgXnZ1acI8r3qHT_uEUvmpbc3t8LGMLlyIg_JAOx2tlCm03tN1Gjami5Lfq22upH9vYKs25Dwx_5fTCgnDIyxRv4FGPdTrwJUIpyKHs82EFcigrF3XKXWCYNYL"/>
+</div>
+<div class="p-8 flex-1">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-amber-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Ashar 24</span>
+<span class="text-gold-soft/60 text-sm">Valentine Special</span>
+</div>
+<h4 class="text-3xl font-black mb-4">Midnight Romance</h4>
+<p class="text-gold-soft/70 mb-6">Celebrate love with a curated 5-course meal and soft violin performances.</p>
+<button class="border border-gold-soft/30 hover:bg-gold-soft/10 px-6 py-2 rounded-xl transition-colors font-bold">Book Table</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Booking CTA -->
+<section class="py-24 bg-cream-light">
+<div class="max-w-[1000px] mx-auto px-4">
+<div class="bg-white rounded-[2rem] p-8 md:p-16 shadow-2xl border border-warm-dark/5 relative overflow-hidden">
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-amber-accent/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 text-center max-w-2xl mx-auto">
+<h2 class="text-5xl font-black text-warm-dark mb-6">Ready to be Hooked?</h2>
+<p class="text-warm-dark/60 text-lg mb-12">Reservations are highly recommended for weekend sessions. Leave your details and we'll get back to you.</p>
+<form class="flex flex-col md:flex-row gap-4 items-center justify-center">
+<input class="w-full md:w-auto flex-1 h-14 px-6 rounded-xl border-warm-dark/10 focus:border-amber-accent focus:ring-amber-accent bg-cream-light/50" placeholder="Full Name" type="text"/>
+<input class="w-full md:w-auto flex-1 h-14 px-6 rounded-xl border-warm-dark/10 focus:border-amber-accent focus:ring-amber-accent bg-cream-light/50" placeholder="Email Address" type="email"/>
+<button class="w-full md:w-auto h-14 px-10 bg-warm-dark text-white font-bold rounded-xl hover:bg-amber-accent transition-all shadow-lg">
+              Book Your Spot
+            </button>
+</form>
+<p class="mt-6 text-sm text-warm-dark/40 italic">We respect your privacy. No spam, just hospitality.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-warm-dark pt-20 pb-10 text-white border-t border-white/5">
+<div class="max-w-[1200px] mx-auto px-4 md:px-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
+<!-- Brand -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="flex items-center gap-4 mb-6">
+<div class="size-10 text-amber-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold">Hook Hospitality</h2>
+</div>
+<p class="text-gold-soft/60 leading-relaxed max-w-xs">
+            Bringing people together through exceptional culinary experiences and world-class entertainment since 2019.
+          </p>
+</div>
+<!-- Contact Info -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<h4 class="text-lg font-bold mb-8 text-gold-soft">Get In Touch</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-gold-soft/80">
+<span class="material-symbols-outlined text-amber-accent">location_on</span>
+<p>Shrinkhala Galli, Koteshwor, Kathmandu</p>
+</div>
+<div class="flex items-center gap-4 text-gold-soft/80">
+<span class="material-symbols-outlined text-amber-accent">mail</span>
+<p>hookhospitalitygroup@gmail.com</p>
+</div>
+<div class="flex items-center gap-4 text-gold-soft/80">
+<span class="material-symbols-outlined text-amber-accent">call</span>
+<p>985-1349480</p>
+</div>
+</div>
+</div>
+<!-- Newsletter/Social -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<h4 class="text-lg font-bold mb-8 text-gold-soft">Follow the Hook</h4>
+<div class="flex gap-4">
+<a class="size-12 rounded-full glass-effect flex items-center justify-center hover:bg-amber-accent transition-colors group" href="#">
+<span class="material-symbols-outlined text-white">social_leaderboard</span>
+</a>
+<a class="size-12 rounded-full glass-effect flex items-center justify-center hover:bg-amber-accent transition-colors" href="#">
+<span class="material-symbols-outlined text-white">camera_alt</span>
+</a>
+<a class="size-12 rounded-full glass-effect flex items-center justify-center hover:bg-amber-accent transition-colors" href="#">
+<span class="material-symbols-outlined text-white">music_note</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-10 border-t border-white/5 text-center text-gold-soft/30 text-sm">
+<p>© 2024 Hook Hospitality Group. All rights reserved. Crafted with Elegance.</p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hook Hospitality - Culinary Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=DM+Sans:wght@400;500;600&amp;family=Newsreader:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#C97D2E",
+          "primary-hover": "#E8A94A",
+          "background-light": "#FDF6EC",
+          "background-dark": "#1A0A02",
+          "surface-dark": "#2C1608",
+          "text-light": "#FDF6EC",
+          "text-dark": "#1A0A02",
+          "muted": "#8F7D70",
+          "tint-amber": "#FFF3E5",
+          "tint-gold": "#FBF0D9"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["DM Sans", "sans-serif"],
+          "newsreader": ["Newsreader", "serif"]
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "md": "12px",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        boxShadow: {
+          "warm-light": "0 8px 32px rgba(201, 125, 46, 0.08)",
+          "warm-dark": "0 8px 32px rgba(26, 10, 2, 0.4)"
+        },
+        animation: {
+          'marquee': 'marquee 25s linear infinite',
+        },
+        keyframes: {
+          marquee: {
+            '0%': { transform: 'translateX(0%)' },
+            '100%': { transform: 'translateX(-100%)' },
+          }
+        }
+      },
+    },
+  }
+</script>
+<style>
+  .noise-overlay {
+    position: relative;
+  }
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+</head>
+<body class="font-body bg-background-light text-text-dark antialiased">
+<main class="w-full overflow-hidden">
+<!-- Marquee Social Proof Strip -->
+<div class="w-full bg-background-dark h-12 flex items-center overflow-hidden relative border-y border-surface-dark">
+<div class="flex whitespace-nowrap animate-marquee">
+<div class="flex gap-8 px-4 items-center">
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Live Music Every Weekend</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Private Dining Available</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Award-Winning Cocktails</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Est. 2019</span>
+<span class="text-muted text-xs">◆</span>
+</div>
+<div class="flex gap-8 px-4 items-center">
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Live Music Every Weekend</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Private Dining Available</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Award-Winning Cocktails</span>
+<span class="text-muted text-xs">◆</span>
+<span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Est. 2019</span>
+<span class="text-muted text-xs">◆</span>
+</div>
+</div>
+</div>
+<section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<!-- Section Header -->
+<div class="text-center mb-16">
+<h2 class="font-display text-[48px] md:text-[56px] leading-tight text-text-dark mb-4">Crafted to Perfection</h2>
+<p class="font-body text-muted text-lg max-w-2xl mx-auto">Discover a symphony of flavors prepared with locally sourced ingredients and culinary mastery.</p>
+</div>
+<!-- Featured Dishes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+<!-- Dish Card 1: Royal Hook Platter (Premium Tandoori) -->
+<article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+<div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Grand tandoori platter featuring an assortment of kebabs, tikkas, and tandoori chicken, beautifully garnished with fresh onions and lemon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMfdBY-YGZQY-bXVYo3z_eTNNKtOgyimvZiWOGPpn3r9N6-jPn_QN8lDGqVsgDiwRIwJr6n6YLZREiZouZsLp0wcXvMJkdAHSxaq_W4-bMeHM0MethfNRkJ4qBqslDmaXLCXwYjRu7fMA874gclyWYkxmWcSxnGwIiDZiaMy2TuHz_ggTqwWOM8tle4F5dMgUgd0Rcz7W3RMcxTzlCze3dl5GGZGfjsT4A7mT8_rQydzHSP-5ivfQEcUpUc1BV6Sx20Qb1QajrccO9');">
+</div>
+</div>
+<div class="p-6 relative z-20 -mt-8">
+<h3 class="font-display text-2xl text-text-dark mb-2">Royal Hook Platter</h3>
+<p class="font-body text-muted text-sm leading-relaxed mb-4">A majestic collection of Mutton Seekh Kebabs, Chicken Seekh, Chicken Tikka, and Tandoori Chicken served with mint chutney.</p>
+<p class="font-body font-bold text-primary text-lg">Rs. 1350</p>
+</div>
+</article>
+<!-- Dish Card 2: Paneer Butter Masala (Signature Main) -->
+<article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+<div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Rich and creamy paneer butter masala in a traditional copper vessel, topped with a swirl of cream and fresh cilantro" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6LyjuxaaDZzP5l7TOcX0GJ4IOZjeAHPdQbOcQ90b8YhfQVc-IN57Lks2a7C3GlmSFcSdAN95CJZ5wRpcHFFxitYf1sVaNsacJxdSGR9R2KUnv_TrBugkutMbzv6PK4sY7hnTha-UGXYGo4t0jcnycvTTMXz3RTSFvdP-EO7MImiSfebtTiwwruiRsFUi4h8qBPvJrzGEf2zIEQ89yfklEHvm8a6wOAXCFXCs2cIctaxSTByPgH94fV560rRTOZFmYwCVci45BZs2c');">
+</div>
+</div>
+<div class="p-6 relative z-20 -mt-8">
+<h3 class="font-display text-2xl text-text-dark mb-2">Paneer Butter Masala</h3>
+<p class="font-body text-muted text-sm leading-relaxed mb-4">Succulent cubes of fresh paneer simmered in a rich, velvety tomato and butter gravy with aromatic spices.</p>
+<p class="font-body font-bold text-primary text-lg">Rs. 415</p>
+</div>
+</article>
+<!-- Dish Card 3: Tequila Sunrise (Specialty Cocktail) -->
+<article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+<div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vibrant layered Tequila Sunrise cocktail with orange juice and grenadine, garnished with a cherry and orange slice on a rustic bar top" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhlvyoTkWKVq2kHSmMUVJqp51zkuhVbLo__1FsTsXggWaZqES3Zs4GEcaLCPKl-2_YQQOwsaMOIayDNhalEYu3ieQRzf0UjnbLPGwUHpiCC9R7XDB0GQJ7yHxK_uwponeZqns9K-KEyJUGZyPr95UivKAfdnHt8yQoYUaRnvnktW9iP2Yh4ABe5qrrym4nyPSWFxsG0Me7BW4do-VkwRF93K1X5nVxcnOJI4IAdZrfttpME8_l-r9dRxS5Zzm6RLCJPIVl41_S5wPL');">
+</div>
+</div>
+<div class="p-6 relative z-20 -mt-8">
+<h3 class="font-display text-2xl text-text-dark mb-2">Tequila Sunrise</h3>
+<p class="font-body text-muted text-sm leading-relaxed mb-4">A refreshing and visually stunning cocktail crafted with premium tequila, fresh orange juice, and a splash of grenadine.</p>
+<p class="font-body font-bold text-primary text-lg">Rs. 650</p>
+</div>
+</article>
+</div>
+<!-- Why Hook / Brand Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pillar 1: Amber -->
+<div class="bg-tint-amber rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end">
+<span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">01</span>
+<h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Artful<br/>Cuisine</h3>
+<p class="font-body text-surface-dark/70 text-sm relative z-10">A menu designed to engage all senses.</p>
+</div>
+<!-- Pillar 2: Dark Brown -->
+<div class="bg-surface-dark noise-overlay rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end shadow-warm-dark">
+<span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">02</span>
+<h3 class="font-display text-3xl text-text-light mb-2 relative z-10">Signature<br/>Cocktails</h3>
+<p class="font-body text-muted text-sm relative z-10">Crafted with precision and premium spirits.</p>
+</div>
+<!-- Pillar 3: Gold -->
+<div class="bg-tint-gold rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end">
+<span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">03</span>
+<h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Live Music<br/>Nights</h3>
+<p class="font-body text-surface-dark/70 text-sm relative z-10">The perfect soundtrack to your evening.</p>
+</div>
+</div>
+</section>
+</main>
+</body></html>

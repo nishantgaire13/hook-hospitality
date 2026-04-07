@@ -1,0 +1,14 @@
+{
+  "name": "hook-hospitality",
+  "version": "1.0.0",
+  "description": "Hook Hospitality - Kathmandu's Premier Lounge & Restaurant",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ejs": "^3.1.10"
+  }
+}

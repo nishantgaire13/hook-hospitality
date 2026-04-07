@@ -1,0 +1,33 @@
+<!-- Floating Navbar -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[900px] px-4 sm:px-6">
+  <div class="glass-nav rounded-full h-16 flex items-center justify-between px-6 shadow-warm-dark border border-white/5">
+    <a href="/" class="flex items-center gap-3 text-text-light cursor-pointer">
+      <img alt="Hook Logo" class="h-10 w-10 rounded-full object-cover border border-primary/20" src="/images/logo.png" />
+      <span class="font-display font-bold text-xl tracking-wide">Hook Hospitality</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'home' ? 'text-primary' : '' %>" href="/">Home</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'menu' ? 'text-primary' : '' %>" href="/menu">Menu</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'events' ? 'text-primary' : '' %>" href="/events">Events</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'gallery' ? 'text-primary' : '' %>" href="/gallery">Gallery</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'booking' ? 'text-primary' : '' %>" href="/booking">Reserve</a>
+    </div>
+    <a href="/booking" class="bg-primary hover:bg-primary-hover text-background-dark text-sm font-semibold h-10 px-6 rounded-full transition-colors hidden sm:flex items-center justify-center">
+      Book a Table
+    </a>
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-btn" class="md:hidden text-text-light">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden glass-nav rounded-2xl mt-2 p-4 shadow-warm-dark border border-white/5">
+    <div class="flex flex-col gap-3">
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-white/5" href="/">Home</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-white/5" href="/menu">Menu</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-white/5" href="/events">Events</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-white/5" href="/gallery">Gallery</a>
+      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-white/5" href="/booking">Reserve</a>
+    </div>
+  </div>
+</nav>
