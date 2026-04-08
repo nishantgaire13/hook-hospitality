@@ -159,6 +159,33 @@
       }
     });
 
+    // ---- Mobile nav active section tracking on scroll ----
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-section]');
+    mobileNavLinks.forEach(item => {
+      const sectionId = item.dataset.section;
+      if (sectionId && document.getElementById(sectionId)) {
+        ScrollTrigger.create({
+          trigger: '#' + sectionId,
+          start: 'top 40%',
+          end: 'bottom 40%',
+          onEnter: () => setMobileNavActive(sectionId),
+          onEnterBack: () => setMobileNavActive(sectionId),
+        });
+      }
+    });
+
+    function setMobileNavActive(activeId) {
+      mobileNavLinks.forEach(item => {
+        if (item.dataset.section === activeId) {
+          item.classList.add('bg-primary', 'text-background-dark');
+          item.classList.remove('text-text-light/80');
+        } else {
+          item.classList.remove('bg-primary', 'text-background-dark');
+          item.classList.add('text-text-light/80');
+        }
+      });
+    }
+
     function setNavActive(activeId) {
       navItems.forEach(item => {
         if (item.dataset.section === activeId) {

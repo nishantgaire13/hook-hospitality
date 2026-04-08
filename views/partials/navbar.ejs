@@ -1,10 +1,22 @@
 <!-- Floating Navbar -->
 <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[900px] px-4 sm:px-6">
-  <div class="glass-nav rounded-full h-16 flex items-center justify-between px-6 shadow-warm-dark border border-white/5">
-    <a href="/" class="flex items-center gap-3 text-text-light cursor-pointer">
-      <img alt="Hook Logo" class="h-10 w-10 rounded-full object-cover border border-primary/20" src="/images/logo.png" />
-      <span class="font-display font-bold text-base sm:text-xl tracking-wide">Hook Hospitality</span>
+  <div class="glass-nav rounded-full h-14 sm:h-16 flex items-center justify-between px-3 sm:px-6 shadow-warm-dark border border-white/5">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 text-text-light cursor-pointer flex-shrink-0">
+      <img alt="Hook Logo" class="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover border border-primary/20" src="/images/logo.png" />
+      <span class="font-display font-bold text-xl tracking-wide hidden md:inline">Hook Hospitality</span>
     </a>
+
+    <!-- Mobile Nav Links (inside the bar) -->
+    <div class="flex md:hidden items-center gap-0.5 overflow-x-auto no-scrollbar">
+      <a class="mobile-nav-link text-[11px] font-semibold px-2.5 py-1.5 rounded-full whitespace-nowrap transition-colors <%= page === 'home' ? 'bg-primary text-background-dark' : 'text-text-light/80 hover:text-primary' %>" href="/" data-section="hero">Home</a>
+      <a class="mobile-nav-link text-[11px] font-semibold px-2.5 py-1.5 rounded-full whitespace-nowrap transition-colors <%= page === 'menu' ? 'bg-primary text-background-dark' : 'text-text-light/80 hover:text-primary' %>" href="/menu" data-section="culinary">Menu</a>
+      <a class="mobile-nav-link text-[11px] font-semibold px-2.5 py-1.5 rounded-full whitespace-nowrap transition-colors <%= page === 'events' ? 'bg-primary text-background-dark' : 'text-text-light/80 hover:text-primary' %>" href="/events" data-section="events-preview">Events</a>
+      <a class="mobile-nav-link text-[11px] font-semibold px-2.5 py-1.5 rounded-full whitespace-nowrap transition-colors <%= page === 'gallery' ? 'bg-primary text-background-dark' : 'text-text-light/80 hover:text-primary' %>" href="/gallery" data-section="testimonials">Gallery</a>
+      <a class="mobile-nav-link text-[11px] font-semibold px-2.5 py-1.5 rounded-full whitespace-nowrap transition-colors <%= page === 'booking' ? 'bg-primary text-background-dark' : 'text-text-light/80 hover:text-primary' %>" href="/booking" data-section="booking-cta">Reserve</a>
+    </div>
+
+    <!-- Desktop Nav Links (glow effect) -->
     <div class="hidden md:flex items-center gap-1">
       <a class="nav-glow-item <%= page === 'home' ? 'nav-active' : '' %>" href="/" data-section="hero" data-gradient="radial-gradient(circle, rgba(201,125,46,0.20) 0%, rgba(201,125,46,0.06) 50%, transparent 100%)">
         <span class="nav-glow-bg"></span>
@@ -32,16 +44,10 @@
         <span class="nav-glow-back">Reserve</span>
       </a>
     </div>
+
+    <!-- Desktop Book Button -->
     <a href="/booking" class="bg-primary hover:bg-primary-hover text-background-dark text-sm font-semibold h-11 px-6 rounded-full transition-colors hidden sm:flex items-center justify-center">
       Book a Table
     </a>
-  </div>
-  <!-- Mobile Nav Links Strip -->
-  <div class="flex md:hidden glass-nav rounded-full mt-2 px-2 py-1.5 shadow-warm-dark border border-white/5 items-center justify-between overflow-x-auto no-scrollbar gap-1">
-    <a class="text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap transition-colors <%= page === 'home' ? 'bg-primary text-background-dark' : 'text-text-light hover:text-primary' %>" href="/">Home</a>
-    <a class="text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap transition-colors <%= page === 'menu' ? 'bg-primary text-background-dark' : 'text-text-light hover:text-primary' %>" href="/menu">Menu</a>
-    <a class="text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap transition-colors <%= page === 'events' ? 'bg-primary text-background-dark' : 'text-text-light hover:text-primary' %>" href="/events">Events</a>
-    <a class="text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap transition-colors <%= page === 'gallery' ? 'bg-primary text-background-dark' : 'text-text-light hover:text-primary' %>" href="/gallery">Gallery</a>
-    <a class="text-xs font-semibold px-3 py-2 rounded-full whitespace-nowrap transition-colors <%= page === 'booking' ? 'bg-primary text-background-dark' : 'text-text-light hover:text-primary' %>" href="/booking">Reserve</a>
   </div>
 </nav>
