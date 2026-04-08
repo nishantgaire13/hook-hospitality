@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9f6",
+                    "on-primary-container": "#d6a47c",
+                    "background": "#faf9f6",
+                    "outline": "#82746b",
+                    "surface-container-highest": "#e3e2e0",
+                    "primary-fixed-dim": "#f0bc92",
+                    "tertiary": "#2f2c22",
+                    "on-secondary-container": "#774401",
+                    "on-primary-fixed-variant": "#623f1e",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e3e2e0",
+                    "surface": "#faf9f6",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dbdad7",
+                    "primary-container": "#5d3a1a",
+                    "primary-fixed": "#ffdcc2",
+                    "surface-container-high": "#e9e8e5",
+                    "surface-container": "#efeeeb",
+                    "secondary-fixed": "#ffdcbe",
+                    "on-surface": "#1a1c1a",
+                    "error": "#ba1a1a",
+                    "on-background": "#1a1c1a",
+                    "secondary-fixed-dim": "#ffb870",
+                    "on-secondary-fixed-variant": "#693c00",
+                    "on-tertiary-fixed": "#1e1b13",
+                    "on-surface-variant": "#50453c",
+                    "secondary": "#885210",
+                    "inverse-primary": "#f0bc92",
+                    "on-secondary-fixed": "#2c1600",
+                    "on-tertiary-container": "#b5aea1",
+                    "surface-tint": "#7d5633",
+                    "tertiary-container": "#464237",
+                    "outline-variant": "#d4c3b8",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f4f3f1",
+                    "secondary-container": "#fdb56c",
+                    "tertiary-fixed-dim": "#cdc6b8",
+                    "tertiary-fixed": "#e9e2d3",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#4b463c",
+                    "on-primary-fixed": "#2e1500",
+                    "primary": "#432406",
+                    "inverse-on-surface": "#f2f1ee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 4px 30px rgba(67, 36, 6, 0.06);
+        }
+        .text-glow {
+            text-shadow: 0 2px 10px rgba(26, 28, 26, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 dark:bg-[#1a1410]/80 backdrop-blur-md shadow-[0_4px_30px_rgba(67,36,6,0.06)]">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-[#432406] dark:text-[#f4f3f1]">Hook Hospitality</div>
+<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-light tracking-wide">
+<a class="text-[#432406]/60 dark:text-[#f4f3f1]/60 hover:text-[#5d3a1a] transition-colors duration-300" href="#">Lounge</a>
+<a class="text-[#432406] dark:text-[#f4f3f1] border-b-2 border-[#432406] pb-1 hover:text-[#5d3a1a] transition-colors duration-300" href="#">Dining</a>
+<a class="text-[#432406]/60 dark:text-[#f4f3f1]/60 hover:text-[#5d3a1a] transition-colors duration-300" href="#">Reserve</a>
+<a class="text-[#432406]/60 dark:text-[#f4f3f1]/60 hover:text-[#5d3a1a] transition-colors duration-300" href="#">Gallery</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label text-sm font-semibold tracking-wider hover:scale-105 transition-transform duration-300">
+                Book a Table
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Header -->
+<section class="relative h-[716px] flex items-center justify-center overflow-hidden mx-4 my-4 rounded-xl">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic food photography" class="w-full h-full object-cover brightness-50" data-alt="Close-up of a beautifully plated gourmet dish with intricate garnishes, warm ambient lighting, steam rising, and soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpZxg2rLP8BfQahT6PEGxHP9WgfqmXZlFzNMZrJaW6cNpjb5vOvoWuHlX8Hf4lX8ko1PxpegFe4sDs1kzxY336J3u90eI0u_8YQWeCnM-CDsAO4nPEgVr4pikMS_nHfJdow6qbBytfkLL8wsSktepoTkV7_uVXJxSsgOMjhcFCjn-8MadDXj9bb19a0n7tCDz1F5pCq0F-isvAEKKavFosFfuSywSm90VS0y5v79M5MSZoVONRyHgVv4E-NeO9Vayiz6g3iFavGl8"/>
+</div>
+<div class="relative z-10 text-center px-4">
+<h1 class="font-headline text-5xl md:text-7xl text-surface-bright font-light tracking-tight italic text-glow">
+                    Artisan Reserve Selection
+                </h1>
+<p class="font-headline text-2xl md:text-3xl text-surface-bright/90 mt-4 font-light tracking-widest">
+                    THE MENU
+                </p>
+<div class="mt-12 h-px w-32 bg-primary-fixed-dim mx-auto"></div>
+</div>
+</section>
+<!-- Signature Showcase -->
+<section class="max-w-screen-2xl mx-auto px-8 py-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="font-label text-secondary tracking-[0.2em] uppercase text-xs font-bold">Curated Excellence</span>
+<h2 class="font-headline text-4xl text-primary mt-2">Signature Showcase</h2>
+</div>
+<p class="max-w-md text-on-surface-variant font-light leading-relaxed">
+                    A testament to our culinary heritage, these plates represent the pinnacle of Hook Hospitality’s artisanal journey.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Mutton Rogan Josh -->
+<div class="group relative space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Mutton Rogan Josh" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Traditional Kashmiri Mutton Rogan Josh in a copper bowl, vibrant red gravy, garnished with fresh cilantro, soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsx0NooePSLVufIPuqAheDytlSh_at45UEiyDrDy6uTsPqH3zXx-cp67a7MGSP48jA-S8RUUHrhqHxjIJNdar69Kq5hbhSPqXXCnGr7vCeBBgGTmQA0eXCJR578Wfd3Ez4oeHjT39c67OzS377KMxbYUYwXthesGEcHQP7DfoigRoXfOPxNIB3fxBhW-hWq6s8rwKTfwTHMTmcM9e0J6ldXdB-GNrZMlm43jNU3-ml2t2IzXuQZ7uo51DVgAdhobFlrJu9T_UOMcQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Mutton Rogan Josh</h3>
+<p class="text-on-surface-variant text-sm mt-1">Slow-cooked tender lamb, aromatic spices</p>
+</div>
+<span class="font-label text-primary font-bold">₹1,250</span>
+</div>
+</div>
+<!-- Paneer Butter Masala -->
+<div class="group relative space-y-6 lg:translate-y-12">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Paneer Butter Masala" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Creamy Paneer Butter Masala in a ceramic dish, rich orange tomato-based sauce, swirls of cream, rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwpuWTYBLJfItXp04rXTBoDFIGtGMeB0EqLuNx5_g-NRIfd2xsHDgoizNOiQCEjNNptnpj212yTDHj_qog31JV4TzPJYYKGIY9Mv0Fhos9mvK4JI1isPWt2YzvfJu8hczigck0jfpYpeiXjYsnzapWh8p8UD0jlK-mKv1PVyZtX--YhLC-SyowXh1NveVdVrlu5-STiFTYI1c6c9CjC16Ht7zS2SfPFWGdVgkQ28_xRN79xuOcjAxnyBAnRjZRMRiIwOQmLPdzXHs"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Paneer Butter Masala</h3>
+<p class="text-on-surface-variant text-sm mt-1">Hand-crafted cottage cheese, silky tomato gravy</p>
+</div>
+<span class="font-label text-primary font-bold">₹850</span>
+</div>
+</div>
+<!-- Crispy Fried Chicken -->
+<div class="group relative space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Crispy Fried Chicken" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Golden brown gourmet crispy fried chicken wings on a wire rack, visible texture, sprinkle of sea salt and herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt6BgvCkVwOrWxECFJ1IYeQZBStELNFTvZYNpJlRvCOPAhOm5MGxSYovvRYAGHCuiCaRcGkp1GLwlPyYoOHDMV_gOFJCNwglE2gv8DtqOH8M9bwaPTP9XZH8mPQUQXS4DXvP547vIxxD5wZo7hpSdB52rris903c65jn_Vew78mtMGhlXaYYqpOZgWN0Pam8yn6GpkcFf5xmBhRGkK4jbNnqbksbhgcZbGMv-D2f6t0CBPHbvkB7V_FfD24Zi3PlWBbTkny49JTok"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Crispy Fried Chicken</h3>
+<p class="text-on-surface-variant text-sm mt-1">Buttermilk brined, double-dredged perfection</p>
+</div>
+<span class="font-label text-primary font-bold">₹750</span>
+</div>
+</div>
+<!-- Chicken Biryani -->
+<div class="group relative space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Chicken Biryani" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Royal Chicken Biryani served in a clay pot, long grain basmati rice, saffron streaks, caramelized onions, boiled egg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW2dG86jKJnB6HsV3KxBqqousNoPwvm2zC4HTrj8wIpTuOlR_PauiA1kZYKfSX8plYQHUIvopa7irtmoJz3hrsRrNz0AxLbmdCohwI9LHpZRVX6imYxCXoK45IDxUHcb-8t561Xukmd_Jkr25YomJcxulSrHKC8KzupQLitvzYjVM1wjUiLVArGeD4qSE-HqyKjZewzseXCJ5ApxTpJRIqJFE3ShNuUBCz7q0DCG_INItt980ZfOLJyfdUJCnCn5jtbdQUaLHbsMo"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Chicken Biryani</h3>
+<p class="text-on-surface-variant text-sm mt-1">Fragrant basmati, slow-steamed with spices</p>
+</div>
+<span class="font-label text-primary font-bold">₹950</span>
+</div>
+</div>
+<!-- Tandoori Chicken -->
+<div class="group relative space-y-6 lg:translate-y-12">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Tandoori Chicken" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Traditional whole Tandoori Chicken, charred edges, vibrant red marinade, served with mint chutney and lemon wedges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_4f2AnHSdVqmrYfPrCl8SH1v6JSTUtoyRvXzbq3h-3u-FNDQgTFU2LcpaR2fQmTP1tmBSa2ET_yEMlW05fJISdypVFvBG4_Ek14BJL6UV2NjCtd_Uz4D3bB-f-8Nq5sUl0cp_fFx0urYK9nMaMevpdd9ocziWCajhVCaHinW_brHY9Zkvob8Pt11YtFiUmKnWR5oTrsows5shIvHllq1S5os7J5QPNTc-8Ges0rEcBLCUPabDtdjA2mF7GHG93HcNhnnkmUBIeQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Tandoori Chicken</h3>
+<p class="text-on-surface-variant text-sm mt-1">Clay-oven roasted, marinated in spiced yogurt</p>
+</div>
+<span class="font-label text-primary font-bold">₹1,100</span>
+</div>
+</div>
+<!-- Mutton Bone Soup -->
+<div class="group relative space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 group-hover:shadow-2xl">
+<img alt="Mutton Bone Soup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Nutritious mutton bone broth in a rustic stoneware bowl, cracked black pepper, fresh herbs, steam, low key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9BnEvSWZnIcHL1iPoD7KufV27gMkLxOGqsqUoSeO5dCIEOLpnzpVhSi5M2YkNNx0WMf8HJWiLibewNebVTuJJXmDDMd8QYemEa6LGjMTnYD5AxQfaX1QmrSTOYk7riDsG_rH62rWXSBWDCeAUwxP2NPGFhIQSNgAl3JUNP8BtZo5VBn0RJHm2RXdQySuE7MZdOk24cocAUweDoXdnXxfsyB6IAJBZ4Smjy8Iz1aCU0mD-6uFyxmyzlfPQTRe8ieVz2kRUv_RDskk"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-primary">Mutton Bone Soup</h3>
+<p class="text-on-surface-variant text-sm mt-1">Essence of slow-boiled marrow and spices</p>
+</div>
+<span class="font-label text-primary font-bold">₹450</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisanal Beverage Bar -->
+<section class="bg-surface-container-low py-32 mt-24">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<span class="font-label text-secondary tracking-[0.2em] uppercase text-xs font-bold italic">The Apothecary</span>
+<h2 class="font-headline text-5xl text-primary mt-2">The Beverage Bar</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Coffee -->
+<div class="relative h-[600px] rounded-xl overflow-hidden group">
+<img alt="Coffee Selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Artisanal latte art on a creamy cappuccino, dark espresso beans scattered on textured wood, warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_PhQ7V1z0H0PPHoM8dSakJEDtDMg_kclzaAVR6I3KJp1mc8EpkWFzjanNDvwXOvHbXM_OKKRQgfKmjtO6_WNB48wopL6YOc_AARC5HaJQFSg-kNh2-KytL2vw5IJ1km8IL3ZEUMf77-OFm8XU4JPYWOueErPHs48dLp4uZtz1Q7qMEORGCkto0dOiNZey9OyaX_omT8E7CPw_JYzsxuFbaDmt7R14HQDEBpa4rotwP1-KlGd40ZwhJmKKIjP7j4pCVIRQP1ev74"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="font-headline text-3xl text-surface-bright italic">Artisan Roast</h3>
+<p class="text-surface-bright/70 mt-2 font-light">Ethically sourced, masterfully brewed beans from the highlands.</p>
+</div>
+</div>
+<!-- Cocktails -->
+<div class="relative h-[600px] rounded-xl overflow-hidden group md:-translate-y-8">
+<img alt="Signature Cocktails" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Sophisticated craft cocktail in a crystal coupe glass, orange peel garnish, moody speakeasy atmosphere with amber backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNsuDdCIdC5kdc9feZXJ8PCGpm1uJ4dc5hihxjulwcDsrrEqm3EUIhT6DEl_Sc3H4HKA_X9T6HU3TagWk4T6DH-E6lgmDuAihuMohd-ZeE1gK35ABT4huCsCWW1w__De5dA-P3cPRZn4VzWSZDsGOEqS1VPHrwwTGUIBf2KZAU_YT7_Z7ougGNL3qaZMNyr2C-XBFph1YZNfiNMjkI7QslH6ZX4eTQC4yC3_l3OGRRmgtHz9DToQ3_rgsztsAqUdSPfn2QS3s2AhE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="font-headline text-3xl text-surface-bright italic">Curated Spirits</h3>
+<p class="text-surface-bright/70 mt-2 font-light">Bespoke mixology using botanical infusions and aged spirits.</p>
+</div>
+</div>
+<!-- Refreshers -->
+<div class="relative h-[600px] rounded-xl overflow-hidden group">
+<img alt="Refreshing Beverages" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Vibrant tropical mocktail with fresh mint and berries, crushed ice, condensation on glass, bright summer daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWVnNtWxp33rsIuukuFS7Z4v5nN4WH2VW5XaeVkPZvejp2FrxiNWL2jW3ulfPSUs5DkaSincyLJoED6RJhgOEVjwL-eqCMW3yA8wLoE21MnGCj2j79IetnbPEJhLn-Ro6eyWFoEXW_tjn0Qm94sIqp0mQmN0vFbslCYRiSkE2aiJQit0NjU1h8_GSbO0RaH5bhhcrK22dnEh-9-7oEnXIKcy6AMm7ws9r7kQc3nXqAX5q15weyafmKirXg_1T_xGEDB3EOq3MNJuQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="font-headline text-3xl text-surface-bright italic">Botanical Juices</h3>
+<p class="text-surface-bright/70 mt-2 font-light">Cold-pressed essences and sparkling floral refreshers.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Menu List -->
+<section class="max-w-screen-xl mx-auto px-8 py-32">
+<div class="text-center mb-24">
+<h2 class="font-headline text-4xl text-primary italic">The Complete Registry</h2>
+<div class="h-px w-24 bg-outline-variant mx-auto mt-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-20">
+<!-- Appetizers -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Appetizers &amp; Starters</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Chilli Paneer Dry</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹450</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Gobi Manchurian</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹380</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Honey Chilli Potato</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹420</span>
+</li>
+</ul>
+</div>
+<!-- Main Course -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Main Course</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Dal Makhani Heritage</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹550</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Chicken Tikka Masala</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹920</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Mutton Korma Royal</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹1,150</span>
+</li>
+</ul>
+</div>
+<!-- Traditional Platters -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Traditional Platters</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Maharaja Thali</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹1,850</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Nizam's Kebab Platter</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹2,200</span>
+</li>
+</ul>
+</div>
+<!-- Hot Beverages -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Beverages - Hot</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Masala Chai Infusion</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹180</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Espresso Doppio</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹220</span>
+</li>
+</ul>
+</div>
+<!-- Spirits -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Bar - Spirits &amp; Cocktails</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Aged Single Malt (30ml)</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹1,450</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Signature Martini</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹950</span>
+</li>
+</ul>
+</div>
+<!-- Tobacco -->
+<div class="space-y-8">
+<h3 class="font-headline text-2xl text-secondary border-b border-outline-variant/30 pb-4">Tobacco</h3>
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Premium Hand-rolled</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹1,200</span>
+</li>
+<li class="flex justify-between items-baseline group">
+<span class="font-headline text-lg group-hover:text-secondary transition-colors italic">Bespoke Shisha Selection</span>
+<span class="h-px flex-grow mx-4 bg-outline-variant/20"></span>
+<span class="font-label text-primary font-semibold">₹1,600</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-surface-bright py-20 px-8">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+<div class="col-span-1 md:col-span-2 space-y-8">
+<h2 class="font-headline text-3xl italic">Hook Hospitality</h2>
+<p class="max-w-md font-light text-surface-bright/60 leading-relaxed">
+                    Crafting timeless culinary experiences where heritage meets the contemporary plate. Every dish is a chapter in our ongoing artisan story.
+                </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-on-primary-container transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-on-primary-container transition-colors">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-on-primary-container transition-colors">mail</span>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label text-xs uppercase tracking-widest font-bold">Lounge Locations</h4>
+<ul class="space-y-4 font-light text-surface-bright/60">
+<li class="hover:text-surface-bright cursor-pointer">Emerald District, Mumbai</li>
+<li class="hover:text-surface-bright cursor-pointer">Heritage Square, Delhi</li>
+<li class="hover:text-surface-bright cursor-pointer">Garden View, Bangalore</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label text-xs uppercase tracking-widest font-bold">Information</h4>
+<ul class="space-y-4 font-light text-surface-bright/60">
+<li class="hover:text-surface-bright cursor-pointer">Artisan Philosophy</li>
+<li class="hover:text-surface-bright cursor-pointer">Private Dining</li>
+<li class="hover:text-surface-bright cursor-pointer">Gift Experiences</li>
+<li class="hover:text-surface-bright cursor-pointer">Sustainability</li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-surface-bright/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs font-label tracking-widest text-surface-bright/40 uppercase">© 2024 Hook Hospitality. Handcrafted Excellence.</p>
+<div class="flex gap-8 text-xs font-label tracking-widest text-surface-bright/40 uppercase">
+<a class="hover:text-surface-bright transition-colors" href="#">Privacy</a>
+<a class="hover:text-surface-bright transition-colors" href="#">Terms</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 bg-[#faf9f6]/85 dark:bg-[#1a1410]/85 backdrop-blur-xl rounded-t-[2.5rem] shadow-[0_-10px_40px_rgba(0,0,0,0.08)]">
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#432406] to-[#5d3a1a] text-white rounded-full w-14 h-14 -mt-6 shadow-lg">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Manrope'] text-[8px] uppercase tracking-[0.1em] font-semibold">Menu</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3a1a]/50 dark:text-[#f4f3f1]/50 px-6 py-4">
+<span class="material-symbols-outlined">star</span>
+<span class="font-['Manrope'] text-[8px] uppercase tracking-[0.1em] font-semibold">Signature</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3a1a]/50 dark:text-[#f4f3f1]/50 px-6 py-4">
+<span class="material-symbols-outlined">local_bar</span>
+<span class="font-['Manrope'] text-[8px] uppercase tracking-[0.1em] font-semibold">Spirits</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5d3a1a]/50 dark:text-[#f4f3f1]/50 px-6 py-4">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] text-[8px] uppercase tracking-[0.1em] font-semibold">Profile</span>
+</div>
+</nav>
+</body></html>

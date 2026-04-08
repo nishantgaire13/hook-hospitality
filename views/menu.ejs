@@ -2,103 +2,637 @@
 <%- include('partials/navbar') %>
 
 <!-- Menu Hero -->
-<section class="relative pt-32 pb-16 hero-gradient">
+<section class="relative pt-32 pb-20 hero-gradient overflow-hidden">
   <div class="absolute inset-0 noise-overlay pointer-events-none"></div>
   <div class="relative z-10 container mx-auto px-4 text-center max-w-4xl">
-    <h1 class="font-display font-bold text-5xl sm:text-6xl md:text-[80px] leading-[1.1] mb-6 text-text-light">Our Menu</h1>
-    <p class="text-muted/90 text-lg max-w-2xl mx-auto font-newsreader italic">Discover a symphony of flavors prepared with locally sourced ingredients and culinary mastery.</p>
+    <span class="inline-block text-accent text-xs font-bold tracking-[0.3em] uppercase mb-4">Experience &middot; Taste &middot; Tradition</span>
+    <h1 class="font-display font-bold text-5xl sm:text-6xl md:text-[80px] leading-[1.1] mb-6 text-text-light">The Menu</h1>
+    <div class="h-px w-24 bg-primary mx-auto mb-6"></div>
+    <p class="text-muted/90 text-lg max-w-2xl mx-auto font-newsreader italic">A curated selection of fine food, craft beverages, artisan coffee and Nepali specialities. All prices in NPR.</p>
   </div>
 </section>
 
-<!-- Marquee Strip -->
-<div class="w-full bg-background-dark h-12 flex items-center overflow-hidden relative border-y border-surface-dark">
-  <div class="flex whitespace-nowrap animate-marquee">
-    <div class="flex gap-8 px-4 items-center">
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Live Music Every Weekend</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Private Dining Available</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Award-Winning Cocktails</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Est. 2019</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-    </div>
-    <div class="flex gap-8 px-4 items-center">
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Live Music Every Weekend</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Private Dining Available</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Award-Winning Cocktails</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-      <span class="text-primary font-body text-sm font-medium tracking-wide uppercase">Est. 2019</span>
-      <span class="text-muted text-xs">&diamondsuit;</span>
-    </div>
+<!-- Category Filter Tabs -->
+<div class="sticky top-[72px] z-30 bg-background-dark/95 backdrop-blur-md border-b border-surface-dark">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex gap-3 overflow-x-auto no-scrollbar">
+    <button class="menu-tab active whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all" data-category="all">All</button>
+    <button class="menu-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all" data-category="food">Food</button>
+    <button class="menu-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all" data-category="coffee">Coffee & Drinks</button>
+    <button class="menu-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all" data-category="bar">Bar & Spirits</button>
+    <button class="menu-tab whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all" data-category="hookah">Hookah</button>
   </div>
 </div>
 
-<!-- Featured Dishes -->
-<section class="bg-background-light py-24 px-4 sm:px-6 lg:px-8">
+<!-- Signature Showcase -->
+<section class="bg-background-dark py-24 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="font-display text-[48px] md:text-[56px] leading-tight text-text-dark mb-4">Crafted to Perfection</h2>
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div>
+        <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs">Curated Excellence</span>
+        <h2 class="font-display text-4xl md:text-5xl text-text-light mt-2">Signature Showcase</h2>
+      </div>
+      <p class="max-w-md text-muted font-light leading-relaxed">A testament to our culinary heritage — these plates represent the pinnacle of Hook Hospitality's artisanal journey.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-      <!-- Royal Hook Platter -->
-      <article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
-        <div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
-          <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMfdBY-YGZQY-bXVYo3z_eTNNKtOgyimvZiWOGPpn3r9N6-jPn_QN8lDGqVsgDiwRIwJr6n6YLZREiZouZsLp0wcXvMJkdAHSxaq_W4-bMeHM0MethfNRkJ4qBqslDmaXLCXwYjRu7fMA874gclyWYkxmWcSxnGwIiDZiaMy2TuHz_ggTqwWOM8tle4F5dMgUgd0Rcz7W3RMcxTzlCze3dl5GGZGfjsT4A7mT8_rQydzHSP-5ivfQEcUpUc1BV6Sx20Qb1QajrccO9');"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Mutton Rogan Josh -->
+      <div class="group relative space-y-5 reveal">
+        <div class="aspect-[4/5] overflow-hidden rounded-xl relative">
+          <img alt="Mutton Rogan Josh" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsx0NooePSLVufIPuqAheDytlSh_at45UEiyDrDy6uTsPqH3zXx-cp67a7MGSP48jA-S8RUUHrhqHxjIJNdar69Kq5hbhSPqXXCnGr7vCeBBgGTmQA0eXCJR578Wfd3Ez4oeHjT39c67OzS377KMxbYUYwXthesGEcHQP7DfoigRoXfOPxNIB3fxBhW-hWq6s8rwKTfwTHMTmcM9e0J6ldXdB-GNrZMlm43jNU3-ml2t2IzXuQZ7uo51DVgAdhobFlrJu9T_UOMcQ"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent"></div>
         </div>
-        <div class="p-6 relative z-20 -mt-8">
-          <h3 class="font-display text-2xl text-text-dark mb-2">Royal Hook Platter</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">A majestic collection of Mutton Seekh Kebabs, Chicken Seekh, Chicken Tikka, and Tandoori Chicken served with mint chutney and house-made sauces.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 1350</p>
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-display text-2xl text-text-light">Mutton Rogan Josh</h3>
+            <p class="text-muted text-sm mt-1">Slow-cooked tender lamb, aromatic Kashmiri spices</p>
+          </div>
+          <span class="font-body text-primary font-bold text-lg">Rs. 590</span>
         </div>
-      </article>
+      </div>
       <!-- Paneer Butter Masala -->
-      <article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
-        <div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
-          <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6LyjuxaaDZzP5l7TOcX0GJ4IOZjeAHPdQbOcQ90b8YhfQVc-IN57Lks2a7C3GlmSFcSdAN95CJZ5wRpcHFFxitYf1sVaNsacJxdSGR9R2KUnv_TrBugkutMbzv6PK4sY7hnTha-UGXYGo4t0jcnycvTTMXz3RTSFvdP-EO7MImiSfebtTiwwruiRsFUi4h8qBPvJrzGEf2zIEQ89yfklEHvm8a6wOAXCFXCs2cIctaxSTByPgH94fV560rRTOZFmYwCVci45BZs2c');"></div>
+      <div class="group relative space-y-5 lg:translate-y-10 reveal">
+        <div class="aspect-[4/5] overflow-hidden rounded-xl relative">
+          <img alt="Paneer Butter Masala" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwpuWTYBLJfItXp04rXTBoDFIGtGMeB0EqLuNx5_g-NRIfd2xsHDgoizNOiQCEjNNptnpj212yTDHj_qog31JV4TzPJYYKGIY9Mv0Fhos9mvK4JI1isPWt2YzvfJu8hczigck0jfpYpeiXjYsnzapWh8p8UD0jlK-mKv1PVyZtX--YhLC-SyowXh1NveVdVrlu5-STiFTYI1c6c9CjC16Ht7zS2SfPFWGdVgkQ28_xRN79xuOcjAxnyBAnRjZRMRiIwOQmLPdzXHs"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent"></div>
         </div>
-        <div class="p-6 relative z-20 -mt-8">
-          <h3 class="font-display text-2xl text-text-dark mb-2">Paneer Butter Masala</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">Succulent cubes of fresh paneer simmered in a rich, velvety tomato and butter gravy with aromatic spices.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 415</p>
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-display text-2xl text-text-light">Paneer Butter Masala</h3>
+            <p class="text-muted text-sm mt-1">Hand-crafted cottage cheese, silky tomato gravy</p>
+          </div>
+          <span class="font-body text-primary font-bold text-lg">Rs. 445</span>
         </div>
-      </article>
-      <!-- Tequila Sunrise -->
-      <article class="bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
-        <div class="h-[300px] w-full rounded-t-md overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
-          <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhlvyoTkWKVq2kHSmMUVJqp51zkuhVbLo__1FsTsXggWaZqES3Zs4GEcaLCPKl-2_YQQOwsaMOIayDNhalEYu3ieQRzf0UjnbLPGwUHpiCC9R7XDB0GQJ7yHxK_uwponeZqns9K-KEyJUGZyPr95UivKAfdnHt8yQoYUaRnvnktW9iP2Yh4ABe5qrrym4nyPSWFxsG0Me7BW4do-VkwRF93K1X5nVxcnOJI4IAdZrfttpME8_l-r9dRxS5Zzm6RLCJPIVl41_S5wPL');"></div>
-        </div>
-        <div class="p-6 relative z-20 -mt-8">
-          <h3 class="font-display text-2xl text-text-dark mb-2">Tequila Sunrise</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">A refreshing and visually stunning cocktail crafted with premium tequila, fresh orange juice, and a splash of grenadine.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 650</p>
-        </div>
-      </article>
-    </div>
-    <!-- Brand Pillars -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-tint-amber rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">01</span>
-        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Artful<br/>Cuisine</h3>
-        <p class="font-body text-surface-dark/70 text-sm relative z-10">A menu designed to engage all senses.</p>
       </div>
-      <div class="bg-surface-dark noise-overlay rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end shadow-warm-dark">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">02</span>
-        <h3 class="font-display text-3xl text-text-light mb-2 relative z-10">Signature<br/>Cocktails</h3>
-        <p class="font-body text-muted text-sm relative z-10">Crafted with precision and premium spirits.</p>
-      </div>
-      <div class="bg-tint-gold rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">03</span>
-        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Live Music<br/>Nights</h3>
-        <p class="font-body text-surface-dark/70 text-sm relative z-10">The perfect soundtrack to your evening.</p>
+      <!-- Tandoori Chicken -->
+      <div class="group relative space-y-5 reveal">
+        <div class="aspect-[4/5] overflow-hidden rounded-xl relative">
+          <img alt="Tandoori Chicken" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_4f2AnHSdVqmrYfPrCl8SH1v6JSTUtoyRvXzbq3h-3u-FNDQgTFU2LcpaR2fQmTP1tmBSa2ET_yEMlW05fJISdypVFvBG4_Ek14BJL6UV2NjCtd_Uz4D3bB-f-8Nq5sUl0cp_fFx0urYK9nMaMevpdd9ocziWCajhVCaHinW_brHY9Zkvob8Pt11YtFiUmKnWR5oTrsows5shIvHllq1S5os7J5QPNTc-8Ges0rEcBLCUPabDtdjA2mF7GHG93HcNhnnkmUBIeQ"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent"></div>
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-display text-2xl text-text-light">Tandoori Chicken</h3>
+            <p class="text-muted text-sm mt-1">Clay-oven roasted, marinated in spiced yogurt</p>
+          </div>
+          <span class="font-body text-primary font-bold text-lg">Rs. 645</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Beverage Showcase -->
+<section class="bg-background-light py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs italic">The Apothecary</span>
+      <h2 class="font-display text-4xl md:text-5xl text-text-dark mt-3">The Beverage Bar</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="relative h-[500px] rounded-xl overflow-hidden group reveal">
+        <img alt="Coffee Selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_PhQ7V1z0H0PPHoM8dSakJEDtDMg_kclzaAVR6I3KJp1mc8EpkWFzjanNDvwXOvHbXM_OKKRQgfKmjtO6_WNB48wopL6YOc_AARC5HaJQFSg-kNh2-KytL2vw5IJ1km8IL3ZEUMf77-OFm8XU4JPYWOueErPHs48dLp4uZtz1Q7qMEORGCkto0dOiNZey9OyaX_omT8E7CPw_JYzsxuFbaDmt7R14HQDEBpa4rotwP1-KlGd40ZwhJmKKIjP7j4pCVIRQP1ev74"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+          <h3 class="font-display text-3xl text-white italic">Artisan Coffee</h3>
+          <p class="text-white/70 mt-2 font-light text-sm">Espresso, cappuccino, latte &amp; more from Rs. 130</p>
+        </div>
+      </div>
+      <div class="relative h-[500px] rounded-xl overflow-hidden group md:-translate-y-6 reveal">
+        <img alt="Signature Cocktails" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNsuDdCIdC5kdc9feZXJ8PCGpm1uJ4dc5hihxjulwcDsrrEqm3EUIhT6DEl_Sc3H4HKA_X9T6HU3TagWk4T6DH-E6lgmDuAihuMohd-ZeE1gK35ABT4huCsCWW1w__De5dA-P3cPRZn4VzWSZDsGOEqS1VPHrwwTGUIBf2KZAU_YT7_Z7ougGNL3qaZMNyr2C-XBFph1YZNfiNMjkI7QslH6ZX4eTQC4yC3_l3OGRRmgtHz9DToQ3_rgsztsAqUdSPfn2QS3s2AhE"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+          <h3 class="font-display text-3xl text-white italic">Curated Spirits</h3>
+          <p class="text-white/70 mt-2 font-light text-sm">Cocktails, whisky, wine &amp; premium spirits</p>
+        </div>
+      </div>
+      <div class="relative h-[500px] rounded-xl overflow-hidden group reveal">
+        <img alt="Refreshing Beverages" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWVnNtWxp33rsIuukuFS7Z4v5nN4WH2VW5XaeVkPZvejp2FrxiNWL2jW3ulfPSUs5DkaSincyLJoED6RJhgOEVjwL-eqCMW3yA8wLoE21MnGCj2j79IetnbPEJhLn-Ro6eyWFoEXW_tjn0Qm94sIqp0mQmN0vFbslCYRiSkE2aiJQit0NjU1h8_GSbO0RaH5bhhcrK22dnEh-9-7oEnXIKcy6AMm7ws9r7kQc3nXqAX5q15weyafmKirXg_1T_xGEDB3EOq3MNJuQ"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+          <h3 class="font-display text-3xl text-white italic">Fresh Refreshers</h3>
+          <p class="text-white/70 mt-2 font-light text-sm">Juices, smoothies, shakes &amp; mocktails</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FULL MENU — FOOD -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="menu-section bg-background-dark py-24 px-4 sm:px-6 lg:px-8" data-category="food">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="font-display text-4xl md:text-5xl text-text-light italic">Food Menu</h2>
+      <div class="h-px w-24 bg-primary mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+
+      <!-- BREAKFAST -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Breakfast</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Indian — Aloo Paratha with Curd</span><span class="menu-dots"></span><span class="menu-price">180</span></li>
+          <li class="menu-item"><span class="menu-name">Classic — Grilled Sausage, Bread Toast, Egg, Veg</span><span class="menu-dots"></span><span class="menu-price">385</span></li>
+          <li class="menu-item"><span class="menu-name">Half Classic — Masala Omelette, Bread Toast</span><span class="menu-dots"></span><span class="menu-price">165</span></li>
+          <li class="menu-item"><span class="menu-name">Hook Special — Full Breakfast</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+        </ul>
+      </div>
+
+      <!-- SALAD & SOUP -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Salad & Soup</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Smoked Chicken Salad</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+          <li class="menu-item"><span class="menu-name">Green Salad</span><span class="menu-dots"></span><span class="menu-price">290</span></li>
+          <li class="menu-item"><span class="menu-name">Chef Special Salad (Veg / Non-Veg)</span><span class="menu-dots"></span><span class="menu-price">495 / 545</span></li>
+          <li class="menu-item"><span class="menu-name">Cream Soup — Mushroom / Chicken</span><span class="menu-dots"></span><span class="menu-price">325</span></li>
+          <li class="menu-item"><span class="menu-name">Hot & Sour — Veg / Chicken</span><span class="menu-dots"></span><span class="menu-price">195 / 245</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Bone Soup</span><span class="menu-dots"></span><span class="menu-price">290</span></li>
+        </ul>
+      </div>
+
+      <!-- VEG APPETIZERS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Appetizers — Veg</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">French Fries</span><span class="menu-dots"></span><span class="menu-price">290</span></li>
+          <li class="menu-item"><span class="menu-name">Veg Manchurian</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Crispy Corn / Sautéd Corn</span><span class="menu-dots"></span><span class="menu-price">330 / 370</span></li>
+          <li class="menu-item"><span class="menu-name">Mushroom Takatak</span><span class="menu-dots"></span><span class="menu-price">350</span></li>
+          <li class="menu-item"><span class="menu-name">Cheese Ball</span><span class="menu-dots"></span><span class="menu-price">370</span></li>
+          <li class="menu-item"><span class="menu-name">Mustang Ko Piro Aloo</span><span class="menu-dots"></span><span class="menu-price">290</span></li>
+          <li class="menu-item"><span class="menu-name">Paneer Stick</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Hook Special Mix Veg</span><span class="menu-dots"></span><span class="menu-price">450</span></li>
+          <li class="menu-item"><span class="menu-name">Veg Tempura</span><span class="menu-dots"></span><span class="menu-price">350</span></li>
+        </ul>
+      </div>
+
+      <!-- NON-VEG APPETIZERS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Appetizers — Non-Veg</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Achari Mutton Thebe</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Hyakula Fry</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Pakku</span><span class="menu-dots"></span><span class="menu-price">625</span></li>
+          <li class="menu-item"><span class="menu-name">Spicy Crispy Chicken</span><span class="menu-dots"></span><span class="menu-price">495</span></li>
+          <li class="menu-item"><span class="menu-name">Buffalo Wings</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+          <li class="menu-item"><span class="menu-name">Crispy Fried Chicken</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+          <li class="menu-item"><span class="menu-name">Timur Chicken</span><span class="menu-dots"></span><span class="menu-price">425</span></li>
+          <li class="menu-item"><span class="menu-name">Golden Fried / Grilled Prawn</span><span class="menu-dots"></span><span class="menu-price">785</span></li>
+          <li class="menu-item"><span class="menu-name">Fish Finger / Fish Manchurian</span><span class="menu-dots"></span><span class="menu-price">450 / 445</span></li>
+        </ul>
+      </div>
+
+      <!-- CHILLY / CHOILA / SADHEKO -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Tit / Bit</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Chilly —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Chips / Mushroom / Paneer</span><span class="menu-dots"></span><span class="menu-price">350 / 380 / 390</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken / Buff / Pork</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton / Prawn</span><span class="menu-dots"></span><span class="menu-price">540 / 640</span></li>
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Choila —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Mushroom / Chicken / Mutton</span><span class="menu-dots"></span><span class="menu-price">345 / 395 / 665</span></li>
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Sadheko —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Aloo / Corn / Peanut</span><span class="menu-dots"></span><span class="menu-price">290 / 330 / 330</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken / Buff Sukuti / Pork</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton / Mutton Sukuti</span><span class="menu-dots"></span><span class="menu-price">560 / 660</span></li>
+        </ul>
+      </div>
+
+      <!-- MOMO -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Momo</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-accent text-xs uppercase tracking-widest">
+                <th class="text-left pb-3 font-semibold"></th>
+                <th class="pb-3 font-semibold">Steam</th>
+                <th class="pb-3 font-semibold">Kothey</th>
+                <th class="pb-3 font-semibold">C-Momo</th>
+                <th class="pb-3 font-semibold">Jhol</th>
+              </tr>
+            </thead>
+            <tbody class="text-text-light/80">
+              <tr class="border-t border-muted/10"><td class="py-2 font-display">Veg</td><td class="text-center text-primary">175</td><td class="text-center text-primary">195</td><td class="text-center text-primary">225</td><td class="text-center text-primary">235</td></tr>
+              <tr class="border-t border-muted/10"><td class="py-2 font-display">Chicken</td><td class="text-center text-primary">250</td><td class="text-center text-primary">270</td><td class="text-center text-primary">290</td><td class="text-center text-primary">310</td></tr>
+              <tr class="border-t border-muted/10"><td class="py-2 font-display">Buff</td><td class="text-center text-primary">250</td><td class="text-center text-primary">270</td><td class="text-center text-primary">290</td><td class="text-center text-primary">310</td></tr>
+              <tr class="border-t border-muted/10"><td class="py-2 font-display">Mutton</td><td class="text-center text-primary">350</td><td class="text-center text-primary">375</td><td class="text-center text-primary">395</td><td class="text-center text-primary">410</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="space-y-4 mt-4">
+          <li class="menu-item"><span class="menu-name">Mutton Momo with Bone Soup</span><span class="menu-dots"></span><span class="menu-price">495</span></li>
+        </ul>
+      </div>
+
+      <!-- SEKUWA & TANDOOR -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Sekuwa & Tandoor</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Sekuwa —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Mix Veg / Chicken / Buff / Pork</span><span class="menu-dots"></span><span class="menu-price">375 / 445</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Sekuwa</span><span class="menu-dots"></span><span class="menu-price">645</span></li>
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Tandoor —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Tandoori Chicken (Half / Full)</span><span class="menu-dots"></span><span class="menu-price">645 / 1250</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Seekh Kebab</span><span class="menu-dots"></span><span class="menu-price">695</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Seekh Kebab</span><span class="menu-dots"></span><span class="menu-price">590</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Tikka / Fish Tikka / Paneer Tikka</span><span class="menu-dots"></span><span class="menu-price">545</span></li>
+          <li class="menu-item"><span class="menu-name">Naan (Butter / Garlic / Keema)</span><span class="menu-dots"></span><span class="menu-price">120 / 150 / 210</span></li>
+        </ul>
+      </div>
+
+      <!-- CURRY -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Curry</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Mix Veg Curry</span><span class="menu-dots"></span><span class="menu-price">290</span></li>
+          <li class="menu-item"><span class="menu-name">Paneer Butter Masala</span><span class="menu-dots"></span><span class="menu-price">445</span></li>
+          <li class="menu-item"><span class="menu-name">Palak Paneer</span><span class="menu-dots"></span><span class="menu-price">425</span></li>
+          <li class="menu-item"><span class="menu-name">Daal Makhani / Daal Tadka</span><span class="menu-dots"></span><span class="menu-price">345 / 295</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Butter Masala</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Rogan Josh</span><span class="menu-dots"></span><span class="menu-price">590</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Curry Nepali Style</span><span class="menu-dots"></span><span class="menu-price">545</span></li>
+          <li class="menu-item"><span class="menu-name">Hook Special Curry (Veg / Non-Veg)</span><span class="menu-dots"></span><span class="menu-price">600 / 720</span></li>
+        </ul>
+      </div>
+
+      <!-- RICE & BIRYANI -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Rice & Biryani</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Plain Rice / Jeera Rice</span><span class="menu-dots"></span><span class="menu-price">145 / 220</span></li>
+          <li class="menu-item"><span class="menu-name">Fried Rice — Veg / Egg</span><span class="menu-dots"></span><span class="menu-price">220 / 240</span></li>
+          <li class="menu-item"><span class="menu-name">Fried Rice — Chicken / Buff / Pork / Mix</span><span class="menu-dots"></span><span class="menu-price">260 / 290</span></li>
+          <li class="menu-item"><span class="menu-name">Veg Biryani</span><span class="menu-dots"></span><span class="menu-price">475</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Biryani</span><span class="menu-dots"></span><span class="menu-price">575</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Biryani</span><span class="menu-dots"></span><span class="menu-price">675</span></li>
+        </ul>
+      </div>
+
+      <!-- NOODLES & CHOPSEY -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Noodles & Chopsey</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Noodles — Veg / Egg</span><span class="menu-dots"></span><span class="menu-price">220 / 240</span></li>
+          <li class="menu-item"><span class="menu-name">Noodles — Chicken / Buff / Pork / Mix</span><span class="menu-dots"></span><span class="menu-price">260 / 290</span></li>
+          <li class="menu-item"><span class="menu-name">Keema Noodles (Veg / Chicken)</span><span class="menu-dots"></span><span class="menu-price">345 / 375</span></li>
+          <li class="menu-item"><span class="menu-name">Chopsey — Chinese / American (Veg)</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Chopsey — Chinese / American (Chicken)</span><span class="menu-dots"></span><span class="menu-price">450</span></li>
+        </ul>
+      </div>
+
+      <!-- PIZZA -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Pizza</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Mix Pizza (Med / Large)</span><span class="menu-dots"></span><span class="menu-price">650 / 870</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Tandoori Pizza (Med / Large)</span><span class="menu-dots"></span><span class="menu-price">575 / 770</span></li>
+          <li class="menu-item"><span class="menu-name">Veg Lovers Pizza (Med / Large)</span><span class="menu-dots"></span><span class="menu-price">575 / 770</span></li>
+          <li class="menu-item"><span class="menu-name">Hawaiian Pizza (Med / Large)</span><span class="menu-dots"></span><span class="menu-price">590 / 790</span></li>
+        </ul>
+      </div>
+
+      <!-- BURGER & SANDWICH -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Burger & Sandwich</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Vegetarian Burger</span><span class="menu-dots"></span><span class="menu-price">350</span></li>
+          <li class="menu-item"><span class="menu-name">Crispy Chicken Burger</span><span class="menu-dots"></span><span class="menu-price">445</span></li>
+          <li class="menu-item"><span class="menu-name">Grilled Chicken Burger</span><span class="menu-dots"></span><span class="menu-price">495</span></li>
+          <li class="menu-item"><span class="menu-name">Veg Cheese Sandwich</span><span class="menu-dots"></span><span class="menu-price">245</span></li>
+          <li class="menu-item"><span class="menu-name">BBQ Chicken Sandwich</span><span class="menu-dots"></span><span class="menu-price">295</span></li>
+        </ul>
+      </div>
+
+      <!-- SIZZLER, TAWA & MAINS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Sizzler, Tawa & Mains</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Veg Sizzler</span><span class="menu-dots"></span><span class="menu-price">515</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Sizzler / Fish Sizzler</span><span class="menu-dots"></span><span class="menu-price">675</span></li>
+          <li class="menu-item"><span class="menu-name">Tawa — Chicken / Fish / Pork</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+          <li class="menu-item"><span class="menu-name">Tawa — Mutton</span><span class="menu-dots"></span><span class="menu-price">645</span></li>
+          <li class="menu-item"><span class="menu-name">Whole Fish (Grilled / Fried / Steamed)</span><span class="menu-dots"></span><span class="menu-price">875</span></li>
+          <li class="menu-item"><span class="menu-name">Grilled Chicken with Mushroom Sauce</span><span class="menu-dots"></span><span class="menu-price">890</span></li>
+          <li class="menu-item"><span class="menu-name">Grilled Trout with Lemon Butter</span><span class="menu-dots"></span><span class="menu-price">1080</span></li>
+          <li class="menu-item"><span class="menu-name">Grilled Salmon with Rosemary</span><span class="menu-dots"></span><span class="menu-price">1190</span></li>
+        </ul>
+      </div>
+
+      <!-- HOOK SPECIAL PLATTERS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Hook Special Platters</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Nepali Style Mutton Platter</span><span class="menu-dots"></span><span class="menu-price">1290</span></li>
+          <li class="text-muted/60 text-xs italic pl-2 -mt-2">Mutton Pakku, Bhutan, Kalejo, Mix Achar, Bhuteko Chiura, Salad</li>
+          <li class="menu-item"><span class="menu-name">Tandoori Combo</span><span class="menu-dots"></span><span class="menu-price">1290</span></li>
+          <li class="text-muted/60 text-xs italic pl-2 -mt-2">Chef Special Mix Tandoori Items</li>
+          <li class="menu-item"><span class="menu-name">Veggie Platter</span><span class="menu-dots"></span><span class="menu-price">1190</span></li>
+        </ul>
+      </div>
+
+      <!-- NEPALI THALI -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Nepali Authentic Thali</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Vegetarian Thali</span><span class="menu-dots"></span><span class="menu-price">390</span></li>
+          <li class="menu-item"><span class="menu-name">Chicken Thali</span><span class="menu-dots"></span><span class="menu-price">490</span></li>
+          <li class="menu-item"><span class="menu-name">Mutton Thali</span><span class="menu-dots"></span><span class="menu-price">590</span></li>
+          <li class="menu-item"><span class="menu-name">Local Kukhura Curry (Whole)</span><span class="menu-dots"></span><span class="menu-price">1985</span></li>
+          <li class="menu-item"><span class="menu-name">Kalij Curry (Whole)</span><span class="menu-dots"></span><span class="menu-price">3945</span></li>
+          <li class="menu-item"><span class="menu-name">Whole Trout Fish Curry</span><span class="menu-dots"></span><span class="menu-price">1985</span></li>
+        </ul>
+      </div>
+
+      <!-- DESSERT -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Dessert</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Ice Cream with Berries & Topping</span><span class="menu-dots"></span><span class="menu-price">175</span></li>
+          <li class="menu-item"><span class="menu-name">Gajar ka Haluwa</span><span class="menu-dots"></span><span class="menu-price">200</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- COFFEE & REFRESHING BEVERAGES -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="menu-section bg-background-light py-24 px-4 sm:px-6 lg:px-8" data-category="coffee">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="font-display text-4xl md:text-5xl text-text-dark italic">Coffee & Refreshing Beverages</h2>
+      <div class="h-px w-24 bg-primary mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+      <!-- CLASSIC HOT -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Classic Hot Beverages</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Ristretto</span><span class="menu-dots-light"></span><span class="menu-price-light">130</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Espresso</span><span class="menu-dots-light"></span><span class="menu-price-light">145</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Doppio</span><span class="menu-dots-light"></span><span class="menu-price-light">160</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Americano</span><span class="menu-dots-light"></span><span class="menu-price-light">160</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Affogato</span><span class="menu-dots-light"></span><span class="menu-price-light">195</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Cappuccino</span><span class="menu-dots-light"></span><span class="menu-price-light">215</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Café Latte</span><span class="menu-dots-light"></span><span class="menu-price-light">225</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Café Mocha</span><span class="menu-dots-light"></span><span class="menu-price-light">285</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Honey Latte</span><span class="menu-dots-light"></span><span class="menu-price-light">285</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Caramel Macchiato</span><span class="menu-dots-light"></span><span class="menu-price-light">295</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Mocha Madness</span><span class="menu-dots-light"></span><span class="menu-price-light">370</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Dark Hot Chocolate</span><span class="menu-dots-light"></span><span class="menu-price-light">255</span></li>
+        </ul>
+      </div>
+
+      <!-- COLD BREWED -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Cold Brewed Coffee</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Iced Americano</span><span class="menu-dots-light"></span><span class="menu-price-light">210</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Iced Cappuccino</span><span class="menu-dots-light"></span><span class="menu-price-light">230</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Iced Latte</span><span class="menu-dots-light"></span><span class="menu-price-light">240</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Iced Caramel Macchiato</span><span class="menu-dots-light"></span><span class="menu-price-light">280</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Iced Mocha</span><span class="menu-dots-light"></span><span class="menu-price-light">260</span></li>
+        </ul>
+      </div>
+
+      <!-- FRAPPE -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">The Sexy Ones (Frappé)</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Mocha / Chocolate / Caramel / Vanilla / Strawberry</span><span class="menu-dots-light"></span><span class="menu-price-light">320</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Oreo Frappe</span><span class="menu-dots-light"></span><span class="menu-price-light">365</span></li>
+        </ul>
+      </div>
+
+      <!-- SHAKES & SMOOTHIES -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Shakes & Smoothies</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Chocolate / Vanilla / Strawberry Shake</span><span class="menu-dots-light"></span><span class="menu-price-light">280</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Oreo Shake</span><span class="menu-dots-light"></span><span class="menu-price-light">320</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Banana / Mango / Strawberry Smoothie</span><span class="menu-dots-light"></span><span class="menu-price-light">320</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Mixed Smoothie</span><span class="menu-dots-light"></span><span class="menu-price-light">370</span></li>
+        </ul>
+      </div>
+
+      <!-- LASSI -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Lassies</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Plain / Sweet Lassi</span><span class="menu-dots-light"></span><span class="menu-price-light">175 / 195</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Banana / Mango / Mixed</span><span class="menu-dots-light"></span><span class="menu-price-light">230 / 240 / 260</span></li>
+        </ul>
+      </div>
+
+      <!-- ICE TEA, JUICE, TEA -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Juices, Tea & More</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Peach / Lemon / Apple Ice Tea</span><span class="menu-dots-light"></span><span class="menu-price-light">225</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Lemonade / Mint Lemonade</span><span class="menu-dots-light"></span><span class="menu-price-light">190 / 245</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Fresh Juice — Watermelon</span><span class="menu-dots-light"></span><span class="menu-price-light">275</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Fresh Juice — Orange / Apple / Pineapple</span><span class="menu-dots-light"></span><span class="menu-price-light">325</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Mixed Juice</span><span class="menu-dots-light"></span><span class="menu-price-light">380</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Black Tea / Lemon Tea / Ginger Tea</span><span class="menu-dots-light"></span><span class="menu-price-light">75 / 90 / 90</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Green Tea / Masala Milk Tea</span><span class="menu-dots-light"></span><span class="menu-price-light">120 / 110</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BAR MENU -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="menu-section bg-background-dark py-24 px-4 sm:px-6 lg:px-8" data-category="bar">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="font-display text-4xl md:text-5xl text-text-light italic">Bar Menu</h2>
+      <div class="h-px w-24 bg-primary mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+      <!-- BEER & CIDER -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Beer & Cider</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Carlsberg / Corona</span><span class="menu-dots"></span><span class="menu-price">630</span></li>
+          <li class="menu-item"><span class="menu-name">Tuborg / Gorkha / Budweiser / Barahsinghe</span><span class="menu-dots"></span><span class="menu-price">590</span></li>
+          <li class="menu-item"><span class="menu-name">Sherpa Draught (Glass / Pitcher)</span><span class="menu-dots"></span><span class="menu-price">425 / 1225</span></li>
+          <li class="menu-item"><span class="menu-name">Somersby Cider</span><span class="menu-dots"></span><span class="menu-price">335</span></li>
+        </ul>
+      </div>
+
+      <!-- COCKTAILS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Cocktails</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Cosmopolitan</span><span class="menu-dots"></span><span class="menu-price">495</span></li>
+          <li class="menu-item"><span class="menu-name">Margarita / Hot Rum Punch</span><span class="menu-dots"></span><span class="menu-price">625</span></li>
+          <li class="menu-item"><span class="menu-name">Sex On The Beach / Mojito / Pinacolada</span><span class="menu-dots"></span><span class="menu-price">645</span></li>
+          <li class="menu-item"><span class="menu-name">Tequila Sunrise</span><span class="menu-dots"></span><span class="menu-price">670</span></li>
+          <li class="menu-item"><span class="menu-name">Long Island Ice Tea</span><span class="menu-dots"></span><span class="menu-price">865</span></li>
+          <li class="menu-item"><span class="menu-name">Jager Bomb / AK-47</span><span class="menu-dots"></span><span class="menu-price">895 / 890</span></li>
+        </ul>
+      </div>
+
+      <!-- MOCKTAILS -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Mocktails</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Blue Angel / Hook Alpine / Mint Slush</span><span class="menu-dots"></span><span class="menu-price">325</span></li>
+          <li class="menu-item"><span class="menu-name">Melon Mojito / Virgin Mojito</span><span class="menu-dots"></span><span class="menu-price">345</span></li>
+          <li class="menu-item"><span class="menu-name">Tropical Fruit Punch</span><span class="menu-dots"></span><span class="menu-price">375</span></li>
+          <li class="menu-item"><span class="menu-name">Hook Special Water Lili</span><span class="menu-dots"></span><span class="menu-price">395</span></li>
+          <li class="menu-item"><span class="menu-name">Virgin Colada</span><span class="menu-dots"></span><span class="menu-price">425</span></li>
+          <li class="menu-item"><span class="menu-name">Cramidine</span><span class="menu-dots"></span><span class="menu-price">499</span></li>
+        </ul>
+      </div>
+
+      <!-- WINE -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Wine</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">House Wine (Glass — Red / White)</span><span class="menu-dots"></span><span class="menu-price">545</span></li>
+          <li class="menu-item"><span class="menu-name">Canvas / J.P. Chenet / Calvet (Bottle)</span><span class="menu-dots"></span><span class="menu-price">2560 / 3060</span></li>
+          <li class="menu-item"><span class="menu-name">Robertson Sparkling (Bottle)</span><span class="menu-dots"></span><span class="menu-price">3340</span></li>
+          <li class="menu-item"><span class="menu-name">Jacob's Creek Imported (Glass / Bottle)</span><span class="menu-dots"></span><span class="menu-price">895 / 3900</span></li>
+        </ul>
+      </div>
+
+      <!-- DOMESTIC WHISKY -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Domestic Whisky</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Signature Green (60ml)</span><span class="menu-dots"></span><span class="menu-price">400</span></li>
+          <li class="menu-item"><span class="menu-name">Old Durbar Regular (60ml)</span><span class="menu-dots"></span><span class="menu-price">445</span></li>
+          <li class="menu-item"><span class="menu-name">Old Durbar B.C. (60ml)</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+          <li class="menu-item"><span class="menu-name">Black Chimney (60ml)</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+          <li class="menu-item"><span class="menu-name">Himalayan Reserve 12 YRS (60ml)</span><span class="menu-dots"></span><span class="menu-price">525</span></li>
+        </ul>
+      </div>
+
+      <!-- IMPORTED WHISKY -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Imported Whisky</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Black Label (60ml)</span><span class="menu-dots"></span><span class="menu-price">890</span></li>
+          <li class="menu-item"><span class="menu-name">Jack Daniel's (60ml)</span><span class="menu-dots"></span><span class="menu-price">985</span></li>
+          <li class="menu-item"><span class="menu-name">Chivas Regal 12 YRS (60ml)</span><span class="menu-dots"></span><span class="menu-price">985</span></li>
+          <li class="menu-item"><span class="menu-name">Glenfiddich 12 YRS (60ml)</span><span class="menu-dots"></span><span class="menu-price">1050</span></li>
+          <li class="menu-item"><span class="menu-name">Chivas Regal 18 YRS (60ml)</span><span class="menu-dots"></span><span class="menu-price">1950</span></li>
+          <li class="menu-item"><span class="menu-name">Royal Salute 21 YRS (60ml)</span><span class="menu-dots"></span><span class="menu-price">3340</span></li>
+          <li class="menu-item"><span class="menu-name">Blue Label (60ml)</span><span class="menu-dots"></span><span class="menu-price">4300</span></li>
+        </ul>
+      </div>
+
+      <!-- VODKA / RUM / GIN -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Vodka, Rum & Gin</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Vodka —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Ruslan / Nude / 8848 / Smirnoff (60ml)</span><span class="menu-dots"></span><span class="menu-price">385 - 400</span></li>
+          <li class="menu-item"><span class="menu-name">Absolut / Absolut Imported (60ml)</span><span class="menu-dots"></span><span class="menu-price">665 / 765</span></li>
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Rum —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Khukri Black / White (60ml)</span><span class="menu-dots"></span><span class="menu-price">360</span></li>
+          <li class="menu-item"><span class="menu-name">Captain Morgan (60ml)</span><span class="menu-dots"></span><span class="menu-price">665</span></li>
+          <li class="menu-item"><span class="menu-name font-semibold text-accent text-xs tracking-widest uppercase">— Gin —</span><span class="menu-dots"></span><span class="menu-price"></span></li>
+          <li class="menu-item"><span class="menu-name">Beefeater (60ml)</span><span class="menu-dots"></span><span class="menu-price">665</span></li>
+          <li class="menu-item"><span class="menu-name">Bombay Sapphire (Bottle)</span><span class="menu-dots"></span><span class="menu-price">12400</span></li>
+        </ul>
+      </div>
+
+      <!-- SHOTS & FLAMBEING -->
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-muted/20 pb-3">Shots & Flambéing</h3>
+        <ul class="space-y-4">
+          <li class="menu-item"><span class="menu-name">Bailey's / Malibu</span><span class="menu-dots"></span><span class="menu-price">425</span></li>
+          <li class="menu-item"><span class="menu-name">Jägermeister</span><span class="menu-dots"></span><span class="menu-price">480</span></li>
+          <li class="menu-item"><span class="menu-name">B-52</span><span class="menu-dots"></span><span class="menu-price">545</span></li>
+          <li class="menu-item"><span class="menu-name">Brain Haemorrhage</span><span class="menu-dots"></span><span class="menu-price">590</span></li>
+          <li class="menu-item"><span class="menu-name">Tequila Silver / Gold</span><span class="menu-dots"></span><span class="menu-price">545 / 585</span></li>
+          <li class="menu-item"><span class="menu-name">Lamborghini On Fire</span><span class="menu-dots"></span><span class="menu-price">1300</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HOOKAH & TOBACCO -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="menu-section bg-background-light py-24 px-4 sm:px-6 lg:px-8" data-category="hookah">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="font-display text-4xl md:text-5xl text-text-dark italic">Tobacco</h2>
+      <div class="h-px w-24 bg-primary mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 max-w-3xl mx-auto">
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Hookah</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Mint / Double Apple / Strawberry</span><span class="menu-dots-light"></span><span class="menu-price-light">510</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Mango / Blue Berry</span><span class="menu-dots-light"></span><span class="menu-price-light">510</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Extra Coil</span><span class="menu-dots-light"></span><span class="menu-price-light">65</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category reveal space-y-6">
+        <h3 class="font-display text-2xl text-primary border-b border-text-dark/10 pb-3">Cigarette</h3>
+        <ul class="space-y-4">
+          <li class="menu-item-light"><span class="menu-name-light">Surya Full (Red / Light / Artic)</span><span class="menu-dots-light"></span><span class="menu-price-light">525 / 550</span></li>
+          <li class="menu-item-light"><span class="menu-name-light">Surya Mini (Red / Light / Artic)</span><span class="menu-dots-light"></span><span class="menu-price-light">280 / 300</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Soft Drinks -->
+<section class="bg-background-dark py-12 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="menu-category reveal space-y-6">
+      <h3 class="font-display text-xl text-primary border-b border-muted/20 pb-3 text-center">Soft Drinks</h3>
+      <ul class="space-y-4 max-w-md mx-auto">
+        <li class="menu-item"><span class="menu-name">Coke / Fanta / Sprite / Soda</span><span class="menu-dots"></span><span class="menu-price">95</span></li>
+        <li class="menu-item"><span class="menu-name">Masala Coke / Fanta / Sprite</span><span class="menu-dots"></span><span class="menu-price">125</span></li>
+        <li class="menu-item"><span class="menu-name">Bottled Water</span><span class="menu-dots"></span><span class="menu-price">70</span></li>
+      </ul>
+    </div>
+    <p class="text-center text-muted/40 text-xs mt-12 italic tracking-wide">All prices in NPR incl. taxes &middot; Hook Hospitality &middot; Enjoy Responsibly</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gradient-to-r from-primary to-accent py-16 px-6 text-center">
+  <h2 class="font-display font-bold text-3xl md:text-4xl text-text-dark mb-6">Ready to Experience?</h2>
+  <a href="/booking" class="btn-hover inline-block bg-background-dark text-text-light font-semibold px-8 py-4 rounded-full transition-colors hover:bg-surface-dark">
+    Reserve Your Table <span class="material-symbols-outlined text-lg align-middle ml-1">arrow_forward</span>
+  </a>
+</section>
+
+<script>
+  // Menu category filter tabs
+  const tabs = document.querySelectorAll('.menu-tab');
+  const sections = document.querySelectorAll('.menu-section');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.category;
+      sections.forEach(sec => {
+        if (cat === 'all' || sec.dataset.category === cat) {
+          sec.style.display = '';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 
 <%- include('partials/footer') %>

@@ -9,6 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- GSAP + ScrollTrigger for Webflow-grade animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -60,6 +64,85 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
+
+    /* Hover Gradient Nav Items */
+    .nav-glow-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      overflow: visible;
+      cursor: pointer;
+      perspective: 600px;
+      text-decoration: none;
+    }
+    .nav-glow-bg {
+      position: absolute;
+      inset: -8px;
+      border-radius: 9999px;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+      z-index: 0;
+    }
+    .nav-glow-item:hover .nav-glow-bg,
+    .nav-glow-item.nav-active .nav-glow-bg {
+      opacity: 1;
+      transform: scale(1.6);
+    }
+    .nav-glow-front {
+      position: relative;
+      z-index: 1;
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(250,249,246,0.65);
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease, color 0.3s ease;
+      transform-origin: center bottom;
+      transform-style: preserve-3d;
+    }
+    .nav-glow-back {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #C97D2E;
+      transform-origin: center top;
+      transform: rotateX(90deg);
+      opacity: 0;
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;
+      transform-style: preserve-3d;
+    }
+    .nav-glow-item:hover .nav-glow-front {
+      transform: rotateX(-90deg);
+      opacity: 0;
+    }
+    .nav-glow-item:hover .nav-glow-back {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    /* Active state */
+    .nav-glow-item.nav-active .nav-glow-front {
+      color: #C97D2E;
+      font-weight: 600;
+    }
+    /* Scroll-active state — pulsing glow */
+    .nav-glow-item.nav-scroll-active .nav-glow-bg {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+    .nav-glow-item.nav-scroll-active .nav-glow-front {
+      color: #C97D2E;
+    }
     .hero-gradient {
       background: radial-gradient(circle at top center, #2C1608 0%, #1A0A02 70%);
     }
@@ -80,50 +163,111 @@
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
+    /* Hero location badge — glowing orange */
+    .hero-location-badge {
+      box-shadow: 0 0 15px rgba(201,125,46,0.15), 0 0 40px rgba(201,125,46,0.05);
+      border-color: rgba(201,125,46,0.3);
+    }
+    .hero-location-badge:hover {
+      box-shadow: 0 0 20px rgba(201,125,46,0.35), 0 0 60px rgba(201,125,46,0.15), inset 0 0 20px rgba(201,125,46,0.05);
+      border-color: rgba(201,125,46,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* Hero background image */
+    .hero-bg-img {
+      filter: saturate(0.8) brightness(0.9);
+      transform: scale(1.05);
+    }
+
+    /* Menu item layout — dotted leader lines */
+    .menu-item, .menu-item-light {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .menu-name, .menu-name-light {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .menu-name { color: rgba(250,249,246,0.85); }
+    .menu-name-light { color: rgba(26,10,2,0.85); }
+    .menu-dots, .menu-dots-light {
+      flex-grow: 1;
+      height: 1px;
+      margin: 0 8px;
+      min-width: 20px;
+    }
+    .menu-dots { background: repeating-linear-gradient(to right, rgba(201,125,46,0.15) 0, rgba(201,125,46,0.15) 2px, transparent 2px, transparent 6px); }
+    .menu-dots-light { background: repeating-linear-gradient(to right, rgba(26,10,2,0.12) 0, rgba(26,10,2,0.12) 2px, transparent 2px, transparent 6px); }
+    .menu-price, .menu-price-light {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .menu-price { color: #C97D2E; }
+    .menu-price-light { color: #C97D2E; }
+    .menu-item:hover .menu-name { color: #C97D2E; }
+    .menu-item-light:hover .menu-name-light { color: #C97D2E; }
+
+    /* Menu tabs */
+    .menu-tab {
+      color: rgba(158,142,126,0.6);
+      border: 1px solid rgba(158,142,126,0.2);
+    }
+    .menu-tab:hover, .menu-tab.active {
+      color: #1A0A02;
+      background: #C97D2E;
+      border-color: #C97D2E;
+    }
+
+    /* Hide scrollbar on tabs */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
     /* Buttery smooth scroll */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Scroll reveal animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-60px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(60px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal-scale.visible {
-      opacity: 1;
-      transform: scale(1);
+    /* GSAP initial states — elements start hidden, GSAP reveals them */
+    .gsap-hero-text { opacity: 0; transform: translateY(60px); }
+    .gsap-hero-badge { opacity: 0; transform: translateY(-30px) scale(0.9); }
+    .gsap-hero-btn { opacity: 0; transform: translateY(30px) scale(0.95); }
+    .gsap-fade-up { opacity: 0; transform: translateY(50px); }
+    .gsap-fade-left { opacity: 0; transform: translateX(-80px); }
+    .gsap-fade-right { opacity: 0; transform: translateX(80px); }
+    .gsap-scale-in { opacity: 0; transform: scale(0.85); }
+    .gsap-rotate-in { opacity: 0; transform: rotate(-3deg) translateY(40px); }
+    .gsap-clip-up { clip-path: inset(100% 0 0 0); }
+
+    /* Split text word wrapper */
+    .word-wrap { display: inline-block; overflow: hidden; }
+    .word-wrap .word { display: inline-block; transform: translateY(100%); }
+
+    /* Section divider line */
+    .section-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,125,46,0.4), transparent);
+      transform: scaleX(0);
     }
 
-    /* Stagger children delays */
+    /* Parallax depth layers */
+    .parallax-slow { will-change: transform; }
+    .parallax-fast { will-change: transform; }
+
+    /* Legacy reveal classes kept for non-homepage pages */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(60px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
     .stagger > *:nth-child(1) { transition-delay: 0ms; }
     .stagger > *:nth-child(2) { transition-delay: 120ms; }
     .stagger > *:nth-child(3) { transition-delay: 240ms; }
@@ -217,6 +361,38 @@
     .nav-scrolled {
       background-color: rgba(26, 10, 2, 0.85) !important;
       box-shadow: 0 8px 32px rgba(26, 10, 2, 0.6);
+    }
+
+    /* Testimonials scrolling columns */
+    @keyframes scroll-up {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50%); }
+    }
+    @keyframes scroll-down {
+      from { transform: translateY(-50%); }
+      to { transform: translateY(0); }
+    }
+    .testimonial-col-up {
+      animation: scroll-up var(--scroll-duration, 25s) linear infinite;
+    }
+    .testimonial-col-down {
+      animation: scroll-down var(--scroll-duration, 30s) linear infinite;
+    }
+    .testimonial-col-up:hover,
+    .testimonial-col-down:hover {
+      animation-play-state: paused;
+    }
+    .testimonial-mask {
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    }
+    .testimonial-card {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(201, 125, 46, 0.15);
+      border-color: rgba(201, 125, 46, 0.4);
     }
   </style>
 </head>

@@ -71,60 +71,16 @@
     });
   }
 
-  // Navbar scroll effect — glass intensifies on scroll
-  const navInner = document.querySelector('nav > div');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-      nav.classList.add('top-4');
-      nav.classList.remove('top-6');
-      if (navInner) navInner.classList.add('nav-scrolled');
-    } else {
-      nav.classList.add('top-6');
-      nav.classList.remove('top-4');
-      if (navInner) navInner.classList.remove('nav-scrolled');
-    }
-    lastScroll = window.scrollY;
-  }, { passive: true });
-
-  // Scroll reveal — IntersectionObserver for buttery entrance animations
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // Smooth scroll for anchor links
+  // Smooth scroll for anchor links (GSAP-powered)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        gsap.to(window, { duration: 1.2, scrollTo: { y: target, offsetY: 60 }, ease: "power3.inOut" });
       }
     });
   });
-
-  // Parallax effect on hero section
-  const heroSection = document.querySelector('.hero-gradient');
-  if (heroSection) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroSection.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
-      }
-    }, { passive: true });
-  }
 
   // Magnetic hover effect on buttons
   document.querySelectorAll('.btn-hover').forEach(btn => {
@@ -132,35 +88,324 @@
       const rect = btn.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+      gsap.to(btn, { x: x * 0.15, y: y * 0.15, duration: 0.3, ease: "power2.out" });
     });
     btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0, 0)';
+      gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
     });
   });
 
-  // Counter animation for rating
-  const ratingEl = document.querySelector('[data-counter]');
-  if (ratingEl) {
-    const counterObserver = new IntersectionObserver((entries) => {
+  // Legacy reveal for non-homepage pages
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if (revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const target = parseFloat(entry.target.dataset.counter);
-          let current = 0;
-          const step = target / 40;
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            entry.target.textContent = current.toFixed(1);
-          }, 30);
-          counterObserver.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
-    counterObserver.observe(ratingEl);
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  /* ============================================================
+     GSAP + ScrollTrigger — Webflow-grade animations
+     ============================================================ */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // ---- Navbar scroll effect ----
+    const navInner = document.querySelector('nav > div');
+    const nav = document.querySelector('nav');
+    if (nav) {
+      ScrollTrigger.create({
+        start: 100,
+        onUpdate: (self) => {
+          if (self.scroll() > 100) {
+            nav.classList.add('top-4');
+            nav.classList.remove('top-6');
+            if (navInner) navInner.classList.add('nav-scrolled');
+          } else {
+            nav.classList.add('top-6');
+            nav.classList.remove('top-4');
+            if (navInner) navInner.classList.remove('nav-scrolled');
+          }
+        }
+      });
+    }
+
+    // ---- Hover gradient nav — set gradient backgrounds ----
+    document.querySelectorAll('.nav-glow-item').forEach(item => {
+      const gradient = item.dataset.gradient;
+      const bg = item.querySelector('.nav-glow-bg');
+      if (bg && gradient) bg.style.background = gradient;
+    });
+
+    // ---- Navbar active section tracking on scroll ----
+    const navItems = document.querySelectorAll('.nav-glow-item[data-section]');
+    const sectionIds = [];
+    navItems.forEach(item => {
+      const sectionId = item.dataset.section;
+      if (sectionId && document.getElementById(sectionId)) {
+        sectionIds.push(sectionId);
+        ScrollTrigger.create({
+          trigger: '#' + sectionId,
+          start: 'top 40%',
+          end: 'bottom 40%',
+          onEnter: () => setNavActive(sectionId),
+          onEnterBack: () => setNavActive(sectionId),
+        });
+      }
+    });
+
+    function setNavActive(activeId) {
+      navItems.forEach(item => {
+        if (item.dataset.section === activeId) {
+          item.classList.add('nav-scroll-active');
+        } else {
+          item.classList.remove('nav-scroll-active');
+        }
+      });
+    }
+
+    // ---- Hero entrance timeline ----
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      // Slow Ken Burns zoom on hero background
+      const heroBgImg = heroSection.querySelector('.hero-bg-img');
+      if (heroBgImg) {
+        gsap.to(heroBgImg, {
+          scale: 1.15,
+          duration: 20,
+          ease: "none",
+          repeat: -1,
+          yoyo: true
+        });
+      }
+
+      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      heroTl
+        .to('.gsap-hero-badge', {
+          opacity: 1, y: 0, scale: 1, duration: 0.8, delay: 0.3
+        })
+        .to('.gsap-hero-text', {
+          opacity: 1, y: 0, duration: 0.9, stagger: 0.15
+        }, "-=0.4")
+        .to('.gsap-hero-btn', {
+          opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.12
+        }, "-=0.5");
+
+      // Hero parallax on scroll — fade out + drift up
+      gsap.to(heroSection, {
+        yPercent: 20,
+        opacity: 0.6,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroSection,
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      // Floating orbs parallax
+      gsap.utils.toArray('.parallax-slow').forEach(orb => {
+        gsap.to(orb, {
+          yPercent: -40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      });
+      gsap.utils.toArray('.parallax-fast').forEach(orb => {
+        gsap.to(orb, {
+          yPercent: -80,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      });
+    }
+
+    // ---- Section divider lines expand on scroll ----
+    gsap.utils.toArray('.section-line').forEach(line => {
+      gsap.to(line, {
+        scaleX: 1,
+        duration: 1.2,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: line,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // ---- Generic scroll animations ----
+
+    // Fade up
+    gsap.utils.toArray('.gsap-fade-up').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        delay: el.closest('.stagger') ? (Array.from(el.parentElement.children).indexOf(el) * 0.12) : 0,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Fade left
+    gsap.utils.toArray('.gsap-fade-left').forEach(el => {
+      gsap.to(el, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Fade right
+    gsap.utils.toArray('.gsap-fade-right').forEach(el => {
+      gsap.to(el, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Scale in
+    gsap.utils.toArray('.gsap-scale-in').forEach(el => {
+      gsap.to(el, {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.4)",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Rotate in
+    gsap.utils.toArray('.gsap-rotate-in').forEach(el => {
+      gsap.to(el, {
+        opacity: 1,
+        rotation: 0,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Clip up reveal
+    gsap.utils.toArray('.gsap-clip-up').forEach(el => {
+      gsap.to(el, {
+        clipPath: "inset(0% 0 0 0)",
+        duration: 1.2,
+        ease: "power4.inOut",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // ---- Section-level parallax backgrounds ----
+    gsap.utils.toArray('section').forEach(section => {
+      const bg = section.querySelector('.noise-overlay, [class*="blur-"]');
+      if (bg && bg !== heroSection) {
+        gsap.to(bg, {
+          yPercent: 15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      }
+    });
+
+    // ---- Counter animation for Google rating ----
+    const ratingEl = document.querySelector('[data-counter]');
+    if (ratingEl) {
+      ScrollTrigger.create({
+        trigger: ratingEl,
+        start: "top 80%",
+        onEnter: () => {
+          const target = parseFloat(ratingEl.dataset.counter);
+          gsap.to({ val: 0 }, {
+            val: target,
+            duration: 1.5,
+            ease: "power2.out",
+            onUpdate: function() {
+              ratingEl.textContent = this.targets()[0].val.toFixed(1);
+            }
+          });
+        },
+        once: true
+      });
+    }
+
+    // ---- Testimonials section scroll-triggered entrance ----
+    const testimonialsSection = document.getElementById('testimonials');
+    if (testimonialsSection) {
+      const cols = testimonialsSection.querySelectorAll('.testimonial-col-up, .testimonial-col-down');
+      cols.forEach((col, i) => {
+        gsap.from(col, {
+          opacity: 0,
+          y: 60,
+          duration: 0.8,
+          delay: i * 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: testimonialsSection,
+            start: "top 75%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+    }
+
+    // Refresh ScrollTrigger after page loads fully (images, fonts)
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
   }
 </script>
 </body>

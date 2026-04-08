@@ -3,14 +3,34 @@
   <div class="glass-nav rounded-full h-16 flex items-center justify-between px-6 shadow-warm-dark border border-white/5">
     <a href="/" class="flex items-center gap-3 text-text-light cursor-pointer">
       <img alt="Hook Logo" class="h-10 w-10 rounded-full object-cover border border-primary/20" src="/images/logo.png" />
-      <span class="font-display font-bold text-xl tracking-wide">Hook Hospitality</span>
+      <span class="font-display font-bold text-xl tracking-wide hidden sm:inline">Hook Hospitality</span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'home' ? 'text-primary' : '' %>" href="/">Home</a>
-      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'menu' ? 'text-primary' : '' %>" href="/menu">Menu</a>
-      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'events' ? 'text-primary' : '' %>" href="/events">Events</a>
-      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'gallery' ? 'text-primary' : '' %>" href="/gallery">Gallery</a>
-      <a class="text-text-light text-sm font-medium hover:text-primary transition-colors <%= page === 'booking' ? 'text-primary' : '' %>" href="/booking">Reserve</a>
+    <div class="hidden md:flex items-center gap-1">
+      <a class="nav-glow-item <%= page === 'home' ? 'nav-active' : '' %>" href="/" data-section="hero" data-gradient="radial-gradient(circle, rgba(201,125,46,0.20) 0%, rgba(201,125,46,0.06) 50%, transparent 100%)">
+        <span class="nav-glow-bg"></span>
+        <span class="nav-glow-front">Home</span>
+        <span class="nav-glow-back">Home</span>
+      </a>
+      <a class="nav-glow-item <%= page === 'menu' ? 'nav-active' : '' %>" href="/menu" data-section="culinary" data-gradient="radial-gradient(circle, rgba(232,169,74,0.20) 0%, rgba(232,169,74,0.06) 50%, transparent 100%)">
+        <span class="nav-glow-bg"></span>
+        <span class="nav-glow-front">Menu</span>
+        <span class="nav-glow-back">Menu</span>
+      </a>
+      <a class="nav-glow-item <%= page === 'events' ? 'nav-active' : '' %>" href="/events" data-section="events-preview" data-gradient="radial-gradient(circle, rgba(201,125,46,0.20) 0%, rgba(201,125,46,0.06) 50%, transparent 100%)">
+        <span class="nav-glow-bg"></span>
+        <span class="nav-glow-front">Events</span>
+        <span class="nav-glow-back">Events</span>
+      </a>
+      <a class="nav-glow-item <%= page === 'gallery' ? 'nav-active' : '' %>" href="/gallery" data-section="testimonials" data-gradient="radial-gradient(circle, rgba(232,169,74,0.20) 0%, rgba(232,169,74,0.06) 50%, transparent 100%)">
+        <span class="nav-glow-bg"></span>
+        <span class="nav-glow-front">Gallery</span>
+        <span class="nav-glow-back">Gallery</span>
+      </a>
+      <a class="nav-glow-item <%= page === 'booking' ? 'nav-active' : '' %>" href="/booking" data-section="booking-cta" data-gradient="radial-gradient(circle, rgba(201,125,46,0.20) 0%, rgba(201,125,46,0.06) 50%, transparent 100%)">
+        <span class="nav-glow-bg"></span>
+        <span class="nav-glow-front">Reserve</span>
+        <span class="nav-glow-back">Reserve</span>
+      </a>
     </div>
     <a href="/booking" class="bg-primary hover:bg-primary-hover text-background-dark text-sm font-semibold h-10 px-6 rounded-full transition-colors hidden sm:flex items-center justify-center">
       Book a Table

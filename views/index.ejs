@@ -2,19 +2,35 @@
 <%- include('partials/navbar') %>
 
 <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col items-center justify-center pt-24 hero-gradient pb-24">
-  <div class="absolute inset-0 noise-overlay pointer-events-none"></div>
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-24 overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/heroviewbg.png" alt="" class="hero-bg-img w-full h-full object-cover" />
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-background-dark/70"></div>
+    <!-- Bottom gradient fade into next section -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background-dark"></div>
+    <!-- Top gradient for navbar area -->
+    <div class="absolute inset-0 bg-gradient-to-b from-background-dark/50 via-transparent to-transparent" style="height: 30%;"></div>
+  </div>
+  <div class="absolute inset-0 noise-overlay pointer-events-none z-[1]"></div>
+  <!-- Floating ambient orbs -->
+  <div class="parallax-slow absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none z-[2]"></div>
+  <div class="parallax-fast absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-[120px] pointer-events-none z-[2]"></div>
+
   <div class="relative z-10 container mx-auto px-4 flex flex-col items-center text-center max-w-4xl">
-    <!-- Pill Badge -->
-    <div class="reveal inline-flex items-center gap-2 border border-muted rounded-full px-4 py-1.5 mb-8 bg-background-dark/50 backdrop-blur-sm">
-      <span class="size-2 rounded-full bg-primary-hover animate-pulse"></span>
-      <span class="text-primary-hover text-xs font-semibold uppercase tracking-widest">OPEN NOW &middot; SHRINKHALA GALLI, KOTESHWOR</span>
+    <!-- Location Badge -->
+    <div class="gsap-hero-badge hero-location-badge inline-flex items-center gap-3 border border-primary/30 rounded-full px-5 py-2 mb-8 glass-nav cursor-pointer transition-all duration-300">
+      <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">location_on</span>
+      <span class="text-text-light/90 text-xs font-semibold uppercase tracking-widest">Sahayoginagar, Koteshwor, Kathmandu-32</span>
     </div>
-    <!-- Massive Typography -->
-    <h1 class="reveal font-display font-bold text-5xl sm:text-6xl md:text-[96px] leading-[1.1] mb-6 text-text-light drop-shadow-lg" style="transition-delay: 150ms;">
-      Hook Up With Our<br/><span class="text-primary/90 italic">Hospitality</span>
+    <!-- Massive Typography — each line animates separately -->
+    <h1 class="font-display font-bold text-5xl sm:text-6xl md:text-[96px] leading-[1.1] mb-6 text-text-light drop-shadow-lg">
+      <span class="gsap-hero-text block">Hook Up With Our</span>
+      <span class="gsap-hero-text block text-primary/90 italic">Hospitality</span>
     </h1>
-    <div class="reveal inline-flex items-center gap-6 px-8 py-3 rounded-full glass-nav border border-white/10 mb-8" style="transition-delay: 300ms;">
+    <!-- Tags pill -->
+    <div class="gsap-hero-text inline-flex items-center gap-6 px-8 py-3 rounded-full glass-nav border border-white/10 mb-8">
       <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Events</span>
       <span class="size-1 rounded-full bg-primary/40"></span>
       <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Live Music</span>
@@ -24,27 +40,27 @@
       <span class="text-primary-hover font-medium tracking-[0.2em] uppercase text-xs">Drinks</span>
     </div>
     <!-- Subline -->
-    <p class="reveal text-muted/90 text-lg sm:text-xl max-w-2xl mb-10 font-newsreader italic font-light tracking-wide leading-relaxed" style="transition-delay: 450ms;">
+    <p class="gsap-hero-text text-muted/90 text-lg sm:text-xl max-w-2xl mb-10 font-newsreader italic font-light tracking-wide leading-relaxed">
       Indulge in artful cuisine, unwind in style at our captivating lounge bar. Flavors ignite, music sets.
     </p>
     <!-- Dual Actions -->
-    <div class="reveal flex flex-wrap items-center justify-center gap-4" style="transition-delay: 600ms;">
-      <a href="/menu" class="btn-hover bg-primary hover:bg-primary-hover text-background-dark font-semibold h-12 px-8 rounded-full transition-colors text-base shadow-lg shadow-primary/20 flex items-center">
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="/menu" class="gsap-hero-btn btn-hover bg-primary hover:bg-primary-hover text-background-dark font-semibold h-12 px-8 rounded-full transition-colors text-base shadow-lg shadow-primary/20 flex items-center">
         Explore Menu
       </a>
-      <a href="/events" class="btn-hover border-2 border-primary text-primary hover:bg-primary/10 font-semibold h-12 px-8 rounded-full transition-colors text-base flex items-center gap-2">
+      <a href="/events" class="gsap-hero-btn btn-hover border-2 border-primary text-primary hover:bg-primary/10 font-semibold h-12 px-8 rounded-full transition-colors text-base flex items-center gap-2">
         <span class="material-symbols-outlined text-[20px]">play_circle</span>
         Watch the Vibe
       </a>
     </div>
     <!-- Google Reviews Badge -->
-    <div class="reveal flex justify-center mt-20" style="transition-delay: 750ms;">
+    <div class="gsap-hero-btn flex justify-center mt-20">
       <div class="glass-nav border border-white/10 rounded-full px-6 py-3 flex items-center gap-4 shadow-warm-dark hover-glow">
         <div class="flex items-center gap-2 border-r border-white/10 pr-4">
           <span class="text-text-light/80 text-[10px] uppercase font-bold tracking-widest">Google Reviews</span>
         </div>
         <div class="flex items-center gap-3">
-          <span class="font-display font-bold text-primary text-lg">Excellent <span data-counter="4.9">0.0</span>/5</span>
+          <span class="font-display font-bold text-primary text-lg"><span data-counter="4.3">0.0</span>/5</span>
           <div class="flex gap-0.5">
             <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -56,7 +72,17 @@
       </div>
     </div>
   </div>
+  <!-- Scroll indicator -->
+  <div class="gsap-hero-btn absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted/50">
+    <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+    <div class="w-5 h-8 border border-muted/30 rounded-full flex justify-center pt-1.5">
+      <div class="w-1 h-2 bg-primary rounded-full animate-bounce"></div>
+    </div>
+  </div>
 </section>
+
+<!-- Section Divider -->
+<div class="section-line w-full"></div>
 
 <!-- Marquee Strip -->
 <div class="w-full bg-gradient-to-r from-primary to-accent h-12 flex items-center overflow-hidden relative">
@@ -85,76 +111,99 @@
 </div>
 
 <!-- Culinary Preview Section -->
-<section class="bg-background-light py-24 px-4 sm:px-6 lg:px-8">
+<section id="culinary" class="bg-background-light py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <div class="section-line w-full mb-24"></div>
   <div class="max-w-7xl mx-auto">
-    <div class="reveal text-center mb-16">
+    <div class="gsap-fade-up text-center mb-16">
       <h2 class="font-display text-[48px] md:text-[56px] leading-tight text-text-dark mb-4">Crafted to Perfection</h2>
       <p class="font-body text-muted text-lg max-w-2xl mx-auto">Discover a symphony of flavors prepared with locally sourced ingredients and culinary mastery.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 stagger">
       <!-- Dish 1 -->
-      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
         <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
           <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
           <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMfdBY-YGZQY-bXVYo3z_eTNNKtOgyimvZiWOGPpn3r9N6-jPn_QN8lDGqVsgDiwRIwJr6n6YLZREiZouZsLp0wcXvMJkdAHSxaq_W4-bMeHM0MethfNRkJ4qBqslDmaXLCXwYjRu7fMA874gclyWYkxmWcSxnGwIiDZiaMy2TuHz_ggTqwWOM8tle4F5dMgUgd0Rcz7W3RMcxTzlCze3dl5GGZGfjsT4A7mT8_rQydzHSP-5ivfQEcUpUc1BV6Sx20Qb1QajrccO9');"></div>
         </div>
         <div class="p-6 relative z-20 -mt-8">
           <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Royal Hook Platter</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">A majestic collection of Mutton Seekh Kebabs, Chicken Seekh, Chicken Tikka, and Tandoori Chicken served with mint chutney.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 1350</p>
+          <p class="font-body text-muted text-sm leading-relaxed">A majestic collection of Mutton Seekh Kebabs, Chicken Seekh, Chicken Tikka, and Tandoori Chicken served with mint chutney.</p>
         </div>
       </article>
       <!-- Dish 2 -->
-      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
         <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
           <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
           <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6LyjuxaaDZzP5l7TOcX0GJ4IOZjeAHPdQbOcQ90b8YhfQVc-IN57Lks2a7C3GlmSFcSdAN95CJZ5wRpcHFFxitYf1sVaNsacJxdSGR9R2KUnv_TrBugkutMbzv6PK4sY7hnTha-UGXYGo4t0jcnycvTTMXz3RTSFvdP-EO7MImiSfebtTiwwruiRsFUi4h8qBPvJrzGEf2zIEQ89yfklEHvm8a6wOAXCFXCs2cIctaxSTByPgH94fV560rRTOZFmYwCVci45BZs2c');"></div>
         </div>
         <div class="p-6 relative z-20 -mt-8">
           <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Paneer Butter Masala</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">Succulent cubes of fresh paneer simmered in a rich, velvety tomato and butter gravy with aromatic spices.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 415</p>
+          <p class="font-body text-muted text-sm leading-relaxed">Succulent cubes of fresh paneer simmered in a rich, velvety tomato and butter gravy with aromatic spices.</p>
         </div>
       </article>
       <!-- Dish 3 -->
-      <article class="reveal hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
         <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
           <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
           <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhlvyoTkWKVq2kHSmMUVJqp51zkuhVbLo__1FsTsXggWaZqES3Zs4GEcaLCPKl-2_YQQOwsaMOIayDNhalEYu3ieQRzf0UjnbLPGwUHpiCC9R7XDB0GQJ7yHxK_uwponeZqns9K-KEyJUGZyPr95UivKAfdnHt8yQoYUaRnvnktW9iP2Yh4ABe5qrrym4nyPSWFxsG0Me7BW4do-VkwRF93K1X5nVxcnOJI4IAdZrfttpME8_l-r9dRxS5Zzm6RLCJPIVl41_S5wPL');"></div>
         </div>
         <div class="p-6 relative z-20 -mt-8">
           <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Tequila Sunrise</h3>
-          <p class="font-body text-muted text-sm leading-relaxed mb-4">A refreshing and visually stunning cocktail crafted with premium tequila, fresh orange juice, and a splash of grenadine.</p>
-          <p class="font-body font-bold text-primary text-lg">Rs. 650</p>
+          <p class="font-body text-muted text-sm leading-relaxed">A refreshing and visually stunning cocktail crafted with premium tequila, fresh orange juice, and a splash of grenadine.</p>
         </div>
       </article>
     </div>
-    <!-- Brand Pillars -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
-      <div class="reveal hover-lift bg-tint-amber rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end cursor-pointer">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">01</span>
-        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Artful<br/>Cuisine</h3>
-        <p class="font-body text-surface-dark/70 text-sm relative z-10">A menu designed to engage all senses.</p>
-      </div>
-      <div class="reveal hover-lift hover-glow bg-surface-dark noise-overlay rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end shadow-warm-dark cursor-pointer">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">02</span>
-        <h3 class="font-display text-3xl text-text-light mb-2 relative z-10">Signature<br/>Cocktails</h3>
-        <p class="font-body text-muted text-sm relative z-10">Crafted with precision and premium spirits.</p>
-      </div>
-      <div class="reveal hover-lift bg-tint-gold rounded-md p-8 relative overflow-hidden h-[240px] flex flex-col justify-end cursor-pointer">
-        <span class="absolute top-4 right-4 font-display text-[80px] leading-none text-primary opacity-20 pointer-events-none select-none">03</span>
-        <h3 class="font-display text-3xl text-text-dark mb-2 relative z-10">Live Music<br/>Nights</h3>
-        <p class="font-body text-surface-dark/70 text-sm relative z-10">The perfect soundtrack to your evening.</p>
-      </div>
+    <!-- Beverage Highlights -->
+    <div class="gsap-fade-up text-center mb-16">
+      <h2 class="font-display text-[48px] md:text-[56px] leading-tight text-text-dark mb-4">From The Bar</h2>
+      <p class="font-body text-muted text-lg max-w-2xl mx-auto">Handcrafted cocktails, artisan coffee, and refreshing beverages to complement your meal.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger">
+      <!-- Beverage 1 — Coffee -->
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <img class="w-full h-full object-cover" alt="Artisan Coffee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_PhQ7V1z0H0PPHoM8dSakJEDtDMg_kclzaAVR6I3KJp1mc8EpkWFzjanNDvwXOvHbXM_OKKRQgfKmjtO6_WNB48wopL6YOc_AARC5HaJQFSg-kNh2-KytL2vw5IJ1km8IL3ZEUMf77-OFm8XU4JPYWOueErPHs48dLp4uZtz1Q7qMEORGCkto0dOiNZey9OyaX_omT8E7CPw_JYzsxuFbaDmt7R14HQDEBpa4rotwP1-KlGd40ZwhJmKKIjP7j4pCVIRQP1ev74" />
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Artisan Coffee</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">From ristretto to caramel macchiato — ethically sourced beans, masterfully brewed to perfection.</p>
+        </div>
+      </article>
+      <!-- Beverage 2 — Cocktails -->
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <img class="w-full h-full object-cover" alt="Signature Cocktails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNsuDdCIdC5kdc9feZXJ8PCGpm1uJ4dc5hihxjulwcDsrrEqm3EUIhT6DEl_Sc3H4HKA_X9T6HU3TagWk4T6DH-E6lgmDuAihuMohd-ZeE1gK35ABT4huCsCWW1w__De5dA-P3cPRZn4VzWSZDsGOEqS1VPHrwwTGUIBf2KZAU_YT7_Z7ougGNL3qaZMNyr2C-XBFph1YZNfiNMjkI7QslH6ZX4eTQC4yC3_l3OGRRmgtHz9DToQ3_rgsztsAqUdSPfn2QS3s2AhE" />
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Signature Cocktails</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">Mojito, Long Island, Margarita and more — bespoke mixology using premium spirits.</p>
+        </div>
+      </article>
+      <!-- Beverage 3 — Refreshers -->
+      <article class="gsap-fade-up hover-lift bg-background-light rounded-md group hover:shadow-warm-light transition-shadow duration-300">
+        <div class="h-[300px] w-full rounded-t-md img-hover-zoom relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent z-10"></div>
+          <img class="w-full h-full object-cover" alt="Fresh Refreshers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWVnNtWxp33rsIuukuFS7Z4v5nN4WH2VW5XaeVkPZvejp2FrxiNWL2jW3ulfPSUs5DkaSincyLJoED6RJhgOEVjwL-eqCMW3yA8wLoE21MnGCj2j79IetnbPEJhLn-Ro6eyWFoEXW_tjn0Qm94sIqp0mQmN0vFbslCYRiSkE2aiJQit0NjU1h8_GSbO0RaH5bhhcrK22dnEh-9-7oEnXIKcy6AMm7ws9r7kQc3nXqAX5q15weyafmKirXg_1T_xGEDB3EOq3MNJuQ" />
+        </div>
+        <div class="p-6 relative z-20 -mt-8">
+          <h3 class="font-display text-2xl text-text-dark mb-2 text-shimmer">Fresh Refreshers</h3>
+          <p class="font-body text-muted text-sm leading-relaxed">Cold-pressed juices, tropical mocktails, smoothies and lassies — pure refreshment.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="section-line w-full"></div>
+
 <!-- Events Preview Section -->
-<section class="py-24 bg-background-dark text-white relative overflow-hidden">
+<section id="events-preview" class="py-24 bg-background-dark text-white relative overflow-hidden">
   <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
   <div class="max-w-[1200px] mx-auto px-4 md:px-20 relative z-10">
-    <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+    <div class="gsap-fade-up flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
       <div>
         <h3 class="text-accent font-bold tracking-[0.3em] uppercase mb-4">Mark Your Calendar</h3>
         <h2 class="text-4xl md:text-5xl font-display font-bold leading-tight">What's On</h2>
@@ -165,7 +214,7 @@
     </div>
     <div class="grid grid-cols-1 gap-6">
       <!-- Event 1 -->
-      <div class="reveal-left hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
+      <div class="gsap-fade-left hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
         <div class="w-full md:w-1/3 h-64 md:h-auto img-hover-zoom">
           <img class="w-full h-full object-cover" alt="Live performance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqb6iAIEzW_SG_HdfxfIfrEylRm-_YvFfTzE7LhiaMVojyjC746OEbla1e44xIc3MWDDvIFw2WLNOwQxubk58o1UQF6M4lDpJzxk50CqbOX3Q6-bPx24zfcHVnWhlgBqqg4kpNu2xDKx6HJLk3RlBWBQvPyHESDxMHp3x0zpPuhKX5xYQhglUMjPFzfgoI3hp7IB3T0pZvM6oXy5yj_eng-LMtobsgBSEfYSOUrYfLflMuQji8KHYVDTHibjBVrALTLxFWE9szETBx" />
         </div>
@@ -180,7 +229,7 @@
         </div>
       </div>
       <!-- Event 2 -->
-      <div class="reveal-right hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
+      <div class="gsap-fade-right hover-glow flex flex-col md:flex-row items-center glass-nav rounded-md overflow-hidden group border border-primary/20">
         <div class="w-full md:w-1/3 h-64 md:h-auto img-hover-zoom">
           <img class="w-full h-full object-cover" alt="Band performance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbRytdjJeyHBS2N9KW526pXLjKeAf_JS_IPn5iY4U2A55ZOIW2opkafL5tex_HRiS8nqE094HpMqxjYdGtCtYXoY9oLrQAiuf6nl8s4G5qwxkxbh9r3YlcEyg983OQX1d2b6njgdASPjZJb5JMijlv-ln1nrqQ9Ol63uAqf1dqq_wcaWk5YXlezLNIK6Jiz1oowjeoRW-iu1u6ZQlwtgBmeW9myeISMvSZdClYWjkcGT5wYlKhqrTe2_0EKozX9kbTh5583ASig6oM" />
         </div>
@@ -198,11 +247,234 @@
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="section-line w-full"></div>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-24 bg-background-light relative overflow-hidden">
+  <div class="container max-w-7xl mx-auto px-4 relative z-10">
+    <!-- Header -->
+    <div class="gsap-fade-up flex flex-col items-center justify-center max-w-xl mx-auto mb-14 text-center">
+      <div class="border border-primary/30 py-1.5 px-5 rounded-full mb-6">
+        <span class="text-primary text-xs font-semibold uppercase tracking-widest">Testimonials</span>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight text-text-dark mb-5">What Our Guests Say</h2>
+      <p class="text-muted text-lg">Real reviews from our valued guests on Google Maps. All 5-star rated.</p>
+    </div>
+
+    <!-- Scrolling Columns -->
+    <div class="flex justify-center gap-6 testimonial-mask max-h-[740px] overflow-hidden">
+
+      <!-- Column 1 (scrolls up) -->
+      <div class="w-full max-w-xs flex-shrink-0">
+        <div class="testimonial-col-up flex flex-col gap-6 pb-6" style="--scroll-duration: 35s;">
+          <% for (let dup = 0; dup < 2; dup++) { %>
+
+          <!-- Omon Pandey -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Thank you Hook Hospitality for making our daughter's birthday ceremony really special. The food, the service, the ambiance — it was beautiful and well done. Definitely recommend!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">OP</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Omon Pandey</div>
+                <div class="text-muted text-xs">Local Guide &middot; Google</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sagar Gyawali -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"I recently had the pleasure of dining at Hook Hospitality and it was a fantastic experience! The atmosphere is a perfect blend of elegance and comfort."</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">SG</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Sagar Gyawali</div>
+                <div class="text-muted text-xs">Local Guide &middot; 174 reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anushka Karki -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Beautifully designed outdoor and indoor seating area, perfect environment to relax and chill. Excellent service delivery. Very friendly and lovely staff. Would recommend!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">AK</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Anushka Karki</div>
+                <div class="text-muted text-xs">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Column 2 (scrolls down — hidden on mobile) -->
+      <div class="w-full max-w-xs flex-shrink-0 hidden md:block">
+        <div class="testimonial-col-down flex flex-col gap-6 pb-6" style="--scroll-duration: 40s;">
+          <% for (let dup = 0; dup < 2; dup++) { %>
+
+          <!-- Umesh Duwal -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"The restaurant truly stands out with its elegant interior and stylish ambiance. From the moment you walk in, you're greeted by a warm and inviting atmosphere that perfectly balances modern design with subtle charm."</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">UD</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Umesh Duwal</div>
+                <div class="text-muted text-xs">Local Guide &middot; 329 reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Madan Bhandari -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Hook Hospitality is a hidden gem on the riverbank! The food, ambiance, and service — everything is top-notch. A must-visit place in Kathmandu."</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">MB</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Madan Bhandari</div>
+                <div class="text-muted text-xs">Local Guide &middot; 167 reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sonia Mahat -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"I had an amazing dining experience! The food was fresh and flavorful, the ambiance was cozy, and the staff was incredibly attentive. Highly recommend their special food — it was a standout!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">SM</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Sonia Mahat</div>
+                <div class="text-muted text-xs">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Column 3 (scrolls up — hidden on mobile & tablet) -->
+      <div class="w-full max-w-xs flex-shrink-0 hidden lg:block">
+        <div class="testimonial-col-up flex flex-col gap-6 pb-6" style="--scroll-duration: 38s;">
+          <% for (let dup = 0; dup < 2; dup++) { %>
+
+          <!-- Kritan Acharya -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Best services ever I got. Hook Hospitality is a place for everyone who prefers best food and atmosphere. It was amazing to visit with friends and family. Please visit at once!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">KA</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Kritan Acharya</div>
+                <div class="text-muted text-xs">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prasant Dahal -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Perfect for 100 people gathering. Good food along with excellent service. The venue handled everything professionally. Highly recommended for events!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">PD</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Prasant Dahal</div>
+                <div class="text-muted text-xs">Local Guide &middot; 31 reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shruti Singh -->
+          <div class="testimonial-card p-8 rounded-3xl border border-text-dark/10 bg-white shadow-lg shadow-primary/5">
+            <div class="flex gap-1 mb-4">
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-text-dark/80 text-sm leading-relaxed mb-5">"Beautiful place with delicious food and affordable price. Live music was just like an added flavour. Will definitely be coming back for more!"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">SS</div>
+              <div>
+                <div class="font-medium text-text-dark text-sm tracking-tight">Shruti Singh</div>
+                <div class="text-muted text-xs">Local Guide &middot; 19 reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section Divider -->
+<div class="section-line w-full"></div>
+
 <!-- Booking CTA Section -->
-<section class="relative bg-gradient-to-r from-primary to-accent py-24 px-6 sm:px-12 lg:px-24 flex flex-col items-center justify-center text-center">
-  <div class="reveal-scale relative z-10 w-full max-w-5xl mx-auto">
+<section id="booking-cta" class="relative bg-gradient-to-r from-primary to-accent py-24 px-6 sm:px-12 lg:px-24 flex flex-col items-center justify-center text-center overflow-hidden">
+  <div class="gsap-scale-in relative z-10 w-full max-w-5xl mx-auto">
     <h2 class="font-display font-bold text-5xl sm:text-[64px] text-text-dark leading-tight mb-12">Ready to be Hooked?</h2>
-    <form action="/booking" method="GET" class="hover-lift bg-background-light p-4 rounded-md shadow-warm-dark flex flex-col md:flex-row items-center gap-4 max-w-4xl mx-auto w-full">
+    <form action="/booking" method="GET" class="gsap-fade-up hover-lift bg-background-light p-4 rounded-md shadow-warm-dark flex flex-col md:flex-row items-center gap-4 max-w-4xl mx-auto w-full">
       <div class="flex-1 w-full flex items-center border-b md:border-b-0 md:border-r border-muted/30 pb-4 md:pb-0 md:pr-4">
         <span class="material-symbols-outlined text-muted mr-3">calendar_today</span>
         <div class="flex flex-col items-start w-full">
