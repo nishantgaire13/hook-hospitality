@@ -5,8 +5,8 @@
 <section class="relative pt-32 pb-16 hero-gradient">
   <div class="absolute inset-0 noise-overlay pointer-events-none"></div>
   <div class="relative z-10 container mx-auto px-4 text-center max-w-4xl">
-    <h1 class="font-display font-bold text-5xl sm:text-6xl md:text-[80px] leading-[1.1] mb-6 text-text-light">Reserve a Table</h1>
-    <p class="text-muted/90 text-lg max-w-2xl mx-auto font-newsreader italic">Reservations are highly recommended for weekend sessions. Secure your spot for an unforgettable evening.</p>
+    <h1 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-[80px] leading-[1.1] mb-4 sm:mb-6 text-text-light">Reserve a Table</h1>
+    <p class="text-muted/90 text-sm sm:text-lg max-w-2xl mx-auto font-newsreader italic px-2">Reservations are highly recommended for weekend sessions. Secure your spot for an unforgettable evening.</p>
   </div>
 </section>
 
@@ -19,29 +19,29 @@
       </div>
     <% } %>
 
-    <h2 class="font-display font-bold text-5xl sm:text-[64px] text-text-dark leading-tight mb-12">Ready to be Hooked?</h2>
+    <h2 class="font-display font-bold text-3xl sm:text-5xl md:text-[64px] text-text-dark leading-tight mb-8 sm:mb-12">Ready to be Hooked?</h2>
 
     <!-- Reservation Widget -->
-    <form method="POST" action="/booking" class="bg-background-light p-8 md:p-12 rounded-md shadow-warm-dark max-w-4xl mx-auto w-full text-left">
+    <form method="POST" action="/booking" class="bg-background-light p-5 sm:p-8 md:p-12 rounded-md shadow-warm-dark max-w-4xl mx-auto w-full text-left">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Full Name</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Full Name</label>
           <input class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm" type="text" name="name" placeholder="Your Name" required />
         </div>
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Email</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Email</label>
           <input class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm" type="email" name="email" placeholder="your@email.com" required />
         </div>
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Phone</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Phone</label>
           <input class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm" type="tel" name="phone" placeholder="+977 98XXXXXXXX" />
         </div>
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Date</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Date</label>
           <input class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm" type="date" name="date" required />
         </div>
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Time</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Time</label>
           <select name="time" class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm cursor-pointer">
             <option>19:00</option>
             <option>19:30</option>
@@ -52,7 +52,7 @@
           </select>
         </div>
         <div>
-          <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Guests</label>
+          <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Guests</label>
           <select name="guests" class="w-full h-14 px-4 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm cursor-pointer">
             <option>2 People</option>
             <option>3 People</option>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="mb-8">
-        <label class="text-[11px] uppercase tracking-widest text-muted font-medium mb-2 block">Special Requests</label>
+        <label class="text-xs sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-muted font-medium mb-2 block">Special Requests</label>
         <textarea class="w-full h-32 px-4 py-3 rounded-sm border border-muted/30 bg-transparent text-text-dark font-medium focus:border-primary focus:ring-primary text-sm resize-none" name="notes" placeholder="Any special dietary requirements, occasion, or seating preferences..."></textarea>
       </div>
       <button type="submit" class="w-full bg-primary hover:bg-primary-hover transition-colors text-text-dark font-semibold text-lg px-8 py-4 rounded-sm flex items-center justify-center gap-2">
