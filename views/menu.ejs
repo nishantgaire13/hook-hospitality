@@ -624,13 +624,22 @@
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const cat = tab.dataset.category;
+      let firstVisible = null;
       sections.forEach(sec => {
         if (cat === 'all' || sec.dataset.category === cat) {
           sec.style.display = '';
+          if (!firstVisible) firstVisible = sec;
         } else {
           sec.style.display = 'none';
         }
       });
+      // Scroll to the first visible section
+      if (firstVisible && cat !== 'all') {
+        setTimeout(() => {
+          const offset = firstVisible.getBoundingClientRect().top + window.scrollY - 120;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }, 50);
+      }
     });
   });
 </script>
