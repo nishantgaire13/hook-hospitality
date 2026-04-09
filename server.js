@@ -32,6 +32,10 @@ app.get('/gallery', (req, res) => {
   res.render('gallery', { title: 'Gallery - Hook Hospitality', page: 'gallery' });
 });
 
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: 'Contact - Hook Hospitality', page: 'contact' });
+});
+
 // Booking form submission
 app.post('/booking', (req, res) => {
   const { date, time, guests, name, email, phone } = req.body;
